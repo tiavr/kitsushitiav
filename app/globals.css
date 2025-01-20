@@ -1,0 +1,164 @@
+/* @tailwind base; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Edo";
+  src: url("/font/edo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --background: #fdf5e6;
+  --foreground: #ffe996;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #2a1810;
+    --foreground: #fdf5e6;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background-color: #ffe996;
+  font-family: "Edo", sans-serif;
+}
+
+/* Classe spécifique pour garder la police Geist */
+.geist-font {
+  font-family: var(--font-geist-sans);
+}
+
+/* Styles pour les scrollbars personnalisées */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e6b17e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4945f;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.1;
+  }
+}
+
+.animate-float {
+  animation: float 10s ease-in-out infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ajoutez ces styles après vos autres styles */
+.scroll-offset {
+  scroll-margin-top: 100px;
+}
+
+/* Animation de survol pour les liens du footer */
+.footer-link {
+  position: relative;
+}
+
+.footer-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #e0bd7f;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* Amélioration de l'effet de texture du sable */
+
+@keyframes sandMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200px 200px;
+  }
+}
+
+/* Ajoutez cette règle pour un meilleur offset des ancres */
+section[id] {
+  scroll-margin-top: 2rem;
+}
+.no-scroll {
+  overflow: hidden;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.bottom-4 {
+  bottom: 1rem;
+}
+
+.right-4 {
+  right: 1rem;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+button:focus {
+  outline: 2px solid #ffd700;
+}
