@@ -15,9 +15,9 @@ interface StoryData {
 
 const stories: StoryData[] = [
   {
-    title: "L'Abandon",
+    title: "COMMENCEMENT",
     content: "Contenu détaillé de l'histoire de l'abandon...",
-    backgroundImage: "/img/story/card-1.jpg",
+    backgroundImage: "/img/story/card-1.png",
     modalImage: "/img/story/eclosion_modal.png",
   },
   {
@@ -29,7 +29,7 @@ const stories: StoryData[] = [
   {
     title: "Nouveau départ",
     content: "Contenu de l'histoire 3...",
-    backgroundImage: "/img/story/card-3.jpg",
+    backgroundImage: "/img/story/card-3.png",
     modalImage: "/img/story/nouvelere_modal.png",
   },
 ];

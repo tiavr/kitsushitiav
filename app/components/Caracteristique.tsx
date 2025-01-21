@@ -45,21 +45,21 @@ const CaractereModal = ({ onClose }: { onClose: () => void }) => {
 
   const traits: TraitDeCaractere[] = [
     {
-      titre: "Méfiant et Hautain",
+      titre: "Loyal",
       description:
-        "Ryuma aura beaucoup de mal à accorder sa confiance à une personne. Il évaluera d'abord les intentions de cette personne et ne lui laissera jamais la mainmise totale sur ses projets. Il évitera de s'associer avec des personnes qu'il considère comme étant faible.",
+        "Koten vouera une loyauté sans faille au village et à son clan. Il agira toujours dans l'intérêt de ces derniers.",
       gif: "/img/caractéristiques/loyal_gif.gif",
     },
     {
       titre: "Calculateur et Manipulateur",
       description:
-        "L'aspect calculateur permet à Ryuma de tirer avantage de certaines situations, chacune de ses décisions serviront à un but précis. Il n'hésitera pas à manipuler les gens pour son propre intérêt. Il ne fait rien sans arrière-pensées.",
+        "L'aspect calculateur permet à Koten de tirer avantage de certaines situations, chacune de ses décisions serviront à un but précis. Il n'hésitera pas à manipuler les gens pour son propre intérêt. Il ne fait rien sans arrière-pensées.",
       gif: "/img/caractéristiques/calculateur_gif.gif",
     },
     {
       titre: "Sociable ?",
       description:
-        "Ryuma se montrera sociable et quelque peu extraverti. Cela lui permet de facilement tisser des liens... tout en masquant ses intentions. Il s'agit principalement d'une façade, il montre son engouement par rapport à son retour au village afin de facilement gagner la confiance des autres. Sa vraie nature est plutôt calme et posé.",
+        "Koten se montrera sociable et quelque peu extraverti. Cela lui permet de facilement tisser des liens... tout en masquant ses intentions. Il s'agit principalement d'une façade, afin de facilement gagner la confiance des autres. Sa vraie nature est plutôt calme et posée.",
       gif: "/img/caractéristiques/sociable_gif.gif",
     },
   ];
@@ -68,14 +68,8 @@ const CaractereModal = ({ onClose }: { onClose: () => void }) => {
     {
       titre: "Kleptomane",
       description:
-        "Le passé de Ryuma à Oto l'a rendu Kleptomane. Il ressent constamment le besoin de voler. A l'époque il volait pour survivre, mais en grandissant il a apprit à voler pour avoir une forme de pression, un contrôle sur les autres. Cela lui donne le sentiment d'avoir le dessus sur les gens. Sa kleptomanie pourrait lui causer du tort car il poussait créer des tensions au sein du village ou du clan.",
+        "Pour se venger des moqueries, Koten a pris la mauvaise habitude voler ses camarades. Il ressent constamment le besoin de voler. A l'époque il volait par vengeance, mais en grandissant il a apprit à voler pour avoir une forme de pression, un contrôle sur les autres. Cela lui donne le sentiment d'avoir le dessus sur les gens.",
       gif: "/img/caractéristiques/kleptomane.gif", // À remplacer par le vrai GIF
-    },
-    {
-      titre: "Soucieux",
-      description:
-        "Ryuma est parfois soucieux, de son avenir, de sa relation avec son père, de sa relation avec les autres. Il est conscient de ses défauts, il aimerait retrouver ses valeurs mais son passé reprend le dessus. Il se remet parfois en question sur ses actes.",
-      gif: "/img/caractéristiques/soucieux.gif", // À remplacer par le vrai GIF
     },
   ];
 
@@ -192,7 +186,7 @@ const CaractereModal = ({ onClose }: { onClose: () => void }) => {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[800px] mx-auto mt-6">
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-6 w-full max-w-[800px] mx-auto mt-6">
               {traitsSecondaires.map((trait, index) => (
                 <motion.div
                   key={trait.titre}

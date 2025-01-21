@@ -24,6 +24,7 @@
 
 body {
   color: var(--foreground);
+  background-image: "/img/youtube-video-gif.gif";
   background-color: black;
   font-family: "Edo", sans-serif;
 }

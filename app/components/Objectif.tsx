@@ -15,88 +15,53 @@ interface ObjectifData {
 // Constants
 const objectifsClan: ObjectifData[] = [
   {
-    title: "Eveiller ses Yomegan",
+    title: "Rechercher les terres de ses ancêtres",
     content:
-      "Par peur d'être abandonné une seconde fois, Ryuma fera tout ce qui est en son pouvoir afin d'eveiller ses Yomegan. Il réalisera le rite autant de fois qu'il le peut si nécessaire. Il souhaite réellement prouver à son père qu'il sera utile au clan en tant que guerrier.",
+      "Koten cherchera à se renseigner sur ses ancêtres et les terres qu'ils ont habité avant de venir à Kusa. Il souhaiterait en savoir plus sur l'histoire de son clan qui ne contient que très peu de récits. Il pense que les anciennes sculptures laissées par ses ancêtres lui permettront de mieux comprendre ses origines.",
+  },
+  {
+    title: "Apprendre les moeurs et tradition du clan",
+    content:
+      "Koten suivra l'éducation de son père afin d'apprendre toutes les traditions et héritages du clan. Le but étant de faire perpétuer ces valeurs aux prochaines générations du clan.",
   },
   {
     title: "Corpus secret",
     content:
-      "Ryuma souhaitera garder des traces écrites de l'histoire du clan Satsu tel qu'il le connait. Suite à cette amnésie et cette perte d'identité temporaire que ses ancêtres ont subit, il juge nécessaire d'archiver dans un document secret l'histoire de son clan. En réalité, il s'agit d'un prétexte pour référencer tout ce qu'il connait du clan et avoir un moyen de pression supplémentaire si jamais le clan venait à le trahir une seconde fois.",
+      "Koten souhaitera garder des traces écrites de l'histoire du clan Kitsushi tel qu'il le connait. Suite à cette amnésie et cette perte d'identité temporaire que ses ancêtres ont subit, il juge nécessaire d'archiver dans un document secret l'histoire de son clan. Ce corpus pourrait être illustré de sculptures.",
   },
   {
-    title: "Dojo Satsu",
+    title: "Dojo Kitsushi",
     content:
-      "Le dojo Satsu accueillera les ninjas souhaitant apprendre l'art du forgeron ou l'art de l'assassinat. Ils pourront se spécialiser dans ces deux disciplines et les meilleurs peuvent espérer intégrer la forge, ou une garde spéciale d'assassins. Il s'agit également un moyen pour Ryuma de repérer des potentiels pions pour son échiquier.",
-  },
-  {
-    title: "Assurer la perennité de la forge",
-    content:
-      "La forge est une institution importante pour le clan mais également pour le village. Ryuma essaiera de populariser la forge et faire tourner l'économie du village grâce à elle. De plus, il souhaite placer la forge comme étant une institution dont le village en sera énormément dépendant au niveau de l'armement. Ce qui rendra le village redevable au clan Satsu, et ce dernier gagnera de la reconnaissance et de l'importance au sein de Suna.",
-  },
-  {
-    title: "Asseoir son autorité",
-    content:
-      "Ryuma utilisera la désinformation et la manipulation de l'opinion publique pour ternir la réputation du clan Fûma et donc éteindre toute rivalité entre les deux clans.  Il organisera des missions de traques et d'assassinat en compétition avec le clan Fûma, afin d'entrainer les membres du clan Satsu à garder leurs sens aiguisés. Cette domination sur les Fûma pourra assouvir, en partie, la haine de Ryuma envers ce clan.",
-  },
-  {
-    title: "Système de missions",
-    content:
-      "Mise en place d'un système pour contacter le clan afin de réaliser des missions de type tueur à gage.",
-  },
-  {
-    title: "Relations Sabaku",
-    content:
-      "Ryuma souhaite entretenir une relation étroite avec les Sabaku en les soutenant dans leurs projets. Ce comportement montre la gratitude qu'il a envers ce clan au vu de la main salvatrice que les Sabaku ont tendu au ancetres de Ryuma. Ce soutien pourrait apporter des bienfaits aux Satsu à l'avenir. Par exemple, il pourrait utiliser la régence du clan afin de promouvoir la forge.",
+      "Le dojo Kitsushi accueillera les ninjas souhaitant apprendre l'art du sculpteur. Il aimerait mettre en avant et populariser cet art auprès des personnes qui ne sont pas familier des capacités du clan Kitsushi",
   },
 
   {
     title: "Relations entre les clans",
     content:
-      "Ryuma fera en sorte d'étudier les relations entre les clans. Le but final est de faire prospérer le clan, en protégeant les intérêts du clan, en réunissant les membres de son clan, en essayant de rendre le clan soudé et fort et en affirmant sa position au sein du village. Cela se fera en étudiant les liens entre les différents clans car ils sont les piliers du village. En organisant des réunions, en débattant, en exposant nos points de vue. En réalité, il s’agit également d’un plan qui utilise la neutralité du clan Satsu afin de gagner de la reconnaissance auprès des autres clans, et se servir de cette notoriété pour la mettre au profit des Sabaku en échange d'un soutien de leur part au sein du village.",
+      "Koten fera en sorte d'étudier les relations entre les clans suite à l'unification des villages. Le but final est de faire prospérer le clan, en protégeant les intérêts du clan, en réunissant les membres de son clan, en essayant de rendre le clan soudé et fort et en affirmant sa position au sein du village. Cela se fera en étudiant les liens entre les différents clans car ils sont les piliers du village. En organisant des réunions, en débattant, en exposant nos points de vue.",
   },
 ];
 
 const objectifsPersonnels: ObjectifData[] = [
   {
-    title: "Aiguiser sa lame",
+    title: "Renforcer son lien avec son serviteur",
     content:
-      "Ryuma continuera de s'entrainer sans relâche afin d'aiguiser sa lame d'assassin et de guerrier. De plus, il développera ses compétences en kenjutsu qui lui serviront pour affiner son apprentissage dans l'art de l'assassinat. Il fera en sorte de se démarquer des autres dans ces domaines afin de graver son nom dans l'histoire comme étant un grand manieur de sabre, et un assassin redouté du monde ninja.",
-  },
-  {
-    title: "Forgeron hors pair",
-    content:
-      "Ryuma poursuivra son entrainement auprès de son père en tant que Forgeron. Etre un guerrier ne suffit pas, il doit également prouver sa valeur et contribuer à la forge du clan.",
+      "Koten souhaite réellement établir un lien fort avec son serviteur. Il souhaite que sa relation avec lui ne soit pas uniquément lié à ces statuts maitre/serviteur. Il a besoin d'un second pouvant l'épauler et le conseiller dans ses projets. Il aimerait que ce serviteur puisse occuper un poste important au sein du village.",
   },
   {
     title: "Maîtriser le Fuinjutsu",
     content:
-      "Ryuma tâchera de trouver un maitre afin d'apprendre le fuinjutsu. Cette technique lui permettra de sceller les secrets du clan, ou bien les multitudes d'armes qui seront forgées par le clan afin d'éviter qu'ils tombent entre de mauvaises mains.",
+      "Koten tâchera de trouver un maitre afin d'apprendre le fuinjutsu. Cette technique lui permettra de sceller les secrets du clan, ils lui serviront aussi pour son projet à la section policière.",
   },
   {
-    title: "Rejoindre la Keisatsu",
+    title: "Rejoindre la Seibai",
     content:
-      "Ryuma fera en sorte d'être stagiaire au sein de la Keisatsu le plus rapidement possible. La Keisatsu lui permet d'être au coeur de nombreux évenements au sein du village ce qui lui permettra de récolter beaucoup d'informations qui lui serviront à l'avenir, des informations qu'il pourrait manipuler.",
+      "Koten fera en sorte de rejoindre la Seibai le plus rapidement possible. La Seibai lui permet d'être au coeur de nombreux évenements au sein du village ce qui lui permettra de récolter beaucoup d'informations qui lui serviront à l'avenir, des informations qu'il pourrait potentillement manipuler. Le but secondaire est de prendre la tête de cette section et montrer que les Kitsushi peuvent hériter de grandes responsabilités.",
   },
   {
-    title: "Créer un réel lien familial",
+    title: "Révolutionner les lois et sanctions de la Seibai",
     content:
-      "Bien que Ryuma soit encore confus de la raison de son abandon. Il cherchera à comprendre et assimiler la mentalité de son père afin de mieux cerner les raisons de son abandon. Le côté soucieux de Ryuma l'oblige à parfois se remettre en question. De par l'éducation du père et du lien qu'ils vont créer, il aimerait retrouver les valeurs de Suna et mettre de côté les mauvaises habitudes qu'il a commencé a developper lors de son enfance au pays du Son. Au fond de de lui, il possède l'envie d'appartenir au village et oublier les événements du passé. En plus de cela, il souhaiterait renouer avec les autres membres du clan qu'il n'a pas vu depuis plusieurs années, son caractère actuel lui fera parfois défaut, mais il essaiera de faire des efforts.",
-  },
-  {
-    title: "Révolutionner les lois et sanctions de la Keisatsu",
-    content:
-      "Le système et les lois d'un village peuvent changer au fur et à mesure de l'évolution de ses habitants. Ryuma souhaite donc effectuer de la recherche, et partir en reconnaissance dans les autres pays afin d'étudier leur section policière et leur système de loi. Il pense qu'il pourrait potentiellement s'inspirer afin d'améliorer le système de Suna et garantir la sécurité et la perennité du village. L'une des raisons principales de l'apprentissage du Fuinjutsu pour Ryuma, est d'intégrer cette pratique dans les sanctions du village. Pour Ryuma, ce genre de sanctions peut-être bénéfique pour empecher le recidivisme et montrer le bon exemple. Bien evidemment, ces sanctions seront adaptés aux infractions commises. Comme vous pouvez le comprendre, le fuinjutsu permettra de placer différents types de sceaux sur l'individu en fonction de la nature de sa sanction.",
-  },
-  {
-    title: "Rallier un clan mineur à sa cause",
-    content:
-      "Ryuma est conscient que les sans clans sont également des piliers au sein du village et que leur voix compte étant donné qu'ils constituent la majorité des ninjas du village. La politique est très importante. Afin d'affirmer sa position il est nécessaire d'avoir des alliés fidèles. Il essaiera de rallier à sa cause un clan mineur ayant des intérêt communs avec lui, et les contrôler. Sur le long terme, il essaiera de placer des membres de ce clan sur des postes intéressants au sein village et manipuler l'opinion publique en sa faveur et en faveur du clan.",
-  },
-  {
-    title: "Composer son échiquier",
-    content:
-      "Ryuma est calculateur. Pour lui le monde n'est qu'un géant échiquier ayant besoin d'un joueur sachant bouger les bonnes pièces. Il tâchera de trouver ses pièces au sein du village, ou hors du village. Des pièces qu'il pourrait contrôler, influencer, ou guider. Un roi respecté du peuple qu'il utilisera pour mettre en avant ses idées et son clan. Une reine possédant des passe-droits pouvant trancher sur des décisions importantes et inverser la balance. Une tour et un fou pouvant naviguer librement et partir en reconnaissance apportant des informations cruciales. Un cavalier loyal mais libre comme un éléctron qui pourrait jouer double-jeu en faveur de Ryuma. Et des pions qui serviront à exécuter des tâches ingrates mais nécessaires pour que Ryuma, son clan et le village prospèrent, les pions seront les pièces les plus importantes pour mettre en place la base de l'échiquier.",
+      "Le système et les lois d'un village peuvent changer au fur et à mesure de l'évolution de ses habitants. Koten souhaite donc effectuer de la recherche, et partir en reconnaissance dans les autres pays afin d'étudier leur section policière et leur système de loi. Il pense qu'il pourrait potentiellement s'inspirer afin d'améliorer le système de Suna et garantir la sécurité et la perennité du village. L'une des raisons principales de l'apprentissage du Fuinjutsu pour Koten, est d'intégrer cette pratique dans les sanctions du village. Pour Koten, ce genre de sanctions peut-être bénéfique pour empecher le recidivisme et montrer le bon exemple. Bien evidemment, ces sanctions seront adaptés aux infractions commises. Comme vous pouvez le comprendre, le fuinjutsu permettra de placer différents types de sceaux sur l'individu en fonction de la nature de sa sanction.",
   },
 ];
 

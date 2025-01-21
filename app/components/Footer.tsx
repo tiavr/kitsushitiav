@@ -38,7 +38,7 @@ const Footer = () => {
               className="opacity-80"
             />
             <p className="text-sand-300 text-sm">
-              Découvrez l&apos;histoire de Koren Kitsushi, ninja de Kusa
+              Découvrez l&apos;histoire de Koten Kitsushi, ninja de Kusa
             </p>
           </motion.div>
 
@@ -69,7 +69,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="text-sand-400 text-sm"
           >
-            © {currentYear} Koren Kitsushi
+            © {currentYear} Koten Kitsushi
           </motion.div>
         </div>
 

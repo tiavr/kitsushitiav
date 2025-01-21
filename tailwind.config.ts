@@ -8,8 +8,8 @@ export default {
   ],
   theme: {
     extend: {
-      blur: {
-        lg: "16px",
+      backgroundImage: {
+        hero: "url('/img/youtube.gif')",
       },
       colors: {
         background: "var(--background)",

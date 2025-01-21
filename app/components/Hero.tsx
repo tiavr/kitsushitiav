@@ -128,14 +128,14 @@ export default function Hero() {
           alt="Village de Kusa"
           fill
           priority
-          className="object-cover blur-xl"
+          className="object-cover blur-sm"
           sizes="100vw"
           quality={90}
         />
       </motion.div>
 
       {/* Particules flottantes */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none bg-hero">
         {particles.map((particle) => (
           <motion.div
             key={particle.id}
@@ -196,7 +196,7 @@ export default function Hero() {
         >
           <Image
             src="/img/Titre.png"
-            alt="Koren Kitsushi"
+            alt="Koten Kitsushi"
             width={1000}
             height={600}
             priority
@@ -229,7 +229,7 @@ export default function Hero() {
         <div className="relative w-full h-full">
           <Image
             src="/img/ninja.png"
-            alt="Koren Kitsushi Character"
+            alt="Koten Kitsushi Character"
             fill
             className="object-contain object-bottom"
             sizes="(max-width: 768px) 100vw, 800px"
