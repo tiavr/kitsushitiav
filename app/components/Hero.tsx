@@ -125,10 +125,10 @@ export default function Hero() {
       >
         <Image
           src="/img/Accueil.png"
-          alt="Village de Suna"
+          alt="Village de Kusa"
           fill
           priority
-          className="object-cover"
+          className="object-cover blur-xl"
           sizes="100vw"
           quality={90}
         />
@@ -196,7 +196,7 @@ export default function Hero() {
         >
           <Image
             src="/img/Titre.png"
-            alt="Ryuma Satsu"
+            alt="Koren Kitsushi"
             width={1000}
             height={600}
             priority
@@ -210,7 +210,7 @@ export default function Hero() {
       {/* Character */}
       <motion.div
         variants={characterVariants}
-        className="absolute -bottom-10 right-0 w-[800px] h-[1000px] z-20"
+        className="absolute -bottom-20 right-0 w-[700px] h-[900px] z-20"
         style={{
           x: characterX,
           opacity: characterOpacity,
@@ -228,8 +228,8 @@ export default function Hero() {
       >
         <div className="relative w-full h-full">
           <Image
-            src="/img/perso.webp"
-            alt="Ryuma Satsu Character"
+            src="/img/ninja.png"
+            alt="Koren Kitsushi Character"
             fill
             className="object-contain object-bottom"
             sizes="(max-width: 768px) 100vw, 800px"

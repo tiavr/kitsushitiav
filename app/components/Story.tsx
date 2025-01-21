@@ -282,7 +282,7 @@ const Story = () => {
   return (
     <Section
       ref={sectionRef}
-      className="py-20 relative bg-[#e0bd7f]"
+      className="py-20 relative bg-[black]"
       id="histoire"
     >
       <InfoButton />
@@ -294,7 +294,7 @@ const Story = () => {
         animate={isSectionInView ? "visible" : "hidden"}
       >
         <motion.div variants={titleVariants} className="text-center mb-12">
-          <h2 className="text-5xl text-black font-bold">Histoire</h2>
+          <h2 className="text-5xl text-sand-200 font-bold">Histoire</h2>
         </motion.div>
 
         <motion.div
@@ -312,7 +312,7 @@ const Story = () => {
               alt="Séparateur"
               width={40}
               height={40}
-              className="opacity-80"
+              className="opacity-80 fill-white"
             />
           </motion.div>
           <div className="h-px bg-sand-600 w-full max-w-[200px]" />

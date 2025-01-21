@@ -38,7 +38,7 @@ const Footer = () => {
               className="opacity-80"
             />
             <p className="text-sand-300 text-sm">
-              Découvrez l&apos;histoire de Ryuma Satsu, ninja de Suna
+              Découvrez l&apos;histoire de Koren Kitsushi, ninja de Kusa
             </p>
           </motion.div>
 
@@ -69,7 +69,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="text-sand-400 text-sm"
           >
-            © {currentYear} Ryuma Satsu
+            © {currentYear} Koren Kitsushi
           </motion.div>
         </div>
 

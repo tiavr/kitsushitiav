@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tiavv-Satsu",
-  description: "Découvrez l'histoire de Ryuma, ninja de Suna",
+  title: "Tiavv-Kitsushi",
+  description: "Découvrez l'histoire de Koren, ninja de Kusa",
 };
 
 export default function RootLayout({

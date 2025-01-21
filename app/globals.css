@@ -24,7 +24,7 @@
 
 body {
   color: var(--foreground);
-  background-color: #ffe996;
+  background-color: black;
   font-family: "Edo", sans-serif;
 }
 
@@ -43,12 +43,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e6b17e;
+  background: black;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d4945f;
+  background: black;
 }
 
 @keyframes float {
@@ -91,7 +91,7 @@ html {
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: #e0bd7f;
+  background-color: white;
   transition: width 0.3s ease;
 }
 
@@ -161,4 +161,10 @@ section[id] {
 
 button:focus {
   outline: 2px solid #ffd700;
+}
+
+.blur-lg {
+  --tw-blur: blur(16px);
+  filter: var(--tw-blur) var(--tw-contrast) var(--tw-grayscale) var(--tw-invert)
+    var(--tw-drop-shadow);
 }

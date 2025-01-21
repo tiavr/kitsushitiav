@@ -500,7 +500,7 @@ const Caracteristique = () => {
   return (
     <Section
       ref={sectionRef}
-      className="py-20 relative bg-[#e0bd7f]"
+      className="py-20 relative bg-[black]"
       id="caracteristiques"
     >
       <motion.div
@@ -511,7 +511,7 @@ const Caracteristique = () => {
       >
         <motion.h2
           variants={titleVariants}
-          className="text-5xl text-black font-bold text-center mb-12"
+          className="text-5xl text-sand-200 font-bold text-center mb-12"
         >
           Caractéristiques
         </motion.h2>
