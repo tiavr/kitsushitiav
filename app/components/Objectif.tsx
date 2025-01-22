@@ -64,12 +64,12 @@ const objectifsPersonnels: ObjectifData[] = [
       "Koten tâchera de trouver un maitre afin d'apprendre le fuinjutsu. Cette technique lui permettra de sceller les secrets du clan, ils lui serviront aussi pour son projet à la section policière.",
   },
   {
-    title: "Rejoindre la Seibai",
+    title: "Rejoindre la Seido",
     content:
-      "Koten fera en sorte de rejoindre la Seibai le plus rapidement possible. La Seibai lui permet d'être au coeur de nombreux évenements au sein du village ce qui lui permettra de récolter beaucoup d'informations qui lui serviront à l'avenir, des informations qu'il pourrait potentillement manipuler. Le but secondaire est de prendre la tête de cette section et montrer que les Kitsushi peuvent hériter de grandes responsabilités.",
+      "Koten fera en sorte de rejoindre la Seido le plus rapidement possible. La Seido lui permet d'être au coeur de nombreux évenements au sein du village ce qui lui permettra de récolter beaucoup d'informations qui lui serviront à l'avenir, des informations qu'il pourrait potentillement manipuler. Le but secondaire est de prendre la tête de cette section et montrer que les Kitsushi peuvent hériter de grandes responsabilités.",
   },
   {
-    title: "Révolutionner les lois et sanctions de la Seibai",
+    title: "Révolutionner les lois et sanctions de la Seido",
     content:
       "Le système et les lois d'un village peuvent changer au fur et à mesure de l'évolution de ses habitants. Koten souhaite donc effectuer de la recherche, et partir en reconnaissance dans les autres pays afin d'étudier leur section policière et leur système de loi. Il pense qu'il pourrait potentiellement s'inspirer afin d'améliorer le système de Suna et garantir la sécurité et la perennité du village. L'une des raisons principales de l'apprentissage du Fuinjutsu pour Koten, est d'intégrer cette pratique dans les sanctions du village. Pour Koten, ce genre de sanctions peut-être bénéfique pour empecher le recidivisme et montrer le bon exemple. Bien evidemment, ces sanctions seront adaptés aux infractions commises. Comme vous pouvez le comprendre, le fuinjutsu permettra de placer différents types de sceaux sur l'individu en fonction de la nature de sa sanction.",
   },
