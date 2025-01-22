@@ -32,17 +32,27 @@ const objectifsClan: ObjectifData[] = [
   {
     title: "Dojo Kitsushi",
     content:
-      "Le dojo Kitsushi accueillera les ninjas souhaitant apprendre l'art du sculpteur. Il aimerait mettre en avant et populariser cet art auprès des personnes qui ne sont pas familier des capacités du clan Kitsushi",
+      "Le dojo Kitsushi accueillera les ninjas souhaitant apprendre l'art du sculpteur. Il aimerait mettre en avant et populariser cet art auprès des personnes qui ne sont pas familier des capacités du clan Kitsushi. Cela permettra de populariser le clan au sein du village qui les a accueilli et leur faire gagner en notoriété.",
   },
 
   {
     title: "Relations entre les clans",
     content:
-      "Koten fera en sorte d'étudier les relations entre les clans suite à l'unification des villages. Le but final est de faire prospérer le clan, en protégeant les intérêts du clan, en réunissant les membres de son clan, en essayant de rendre le clan soudé et fort et en affirmant sa position au sein du village. Cela se fera en étudiant les liens entre les différents clans car ils sont les piliers du village. En organisant des réunions, en débattant, en exposant nos points de vue.",
+      "Koten fera en sorte d'étudier les relations entre les clans suite à l'unification des villages. Le but final est d'unifier les clans du village et de garantir une cohésion entre ceux-ci. Cela se fera en étudiant les liens entre les différents clans car ils sont les piliers du village. En organisant des réunions, en débattant, en exposant nos points de vue. Pour Koten, un village se doit d'être uni s'il veut être fort.",
+  },
+  {
+    title: "Affirmer sa position",
+    content:
+      "Par le passé, le clan Kitsushi n'héritèrent jamais de grandes responsabilités. Suite à l'unification des villages. Koten souhaite en profiter pour changer les choses. Il souhaite faire prospérer le clan et protéger les intérets de ce dernier. Il souhaite affirmer la position du clan et le placer comme étant un pilier non seulement militaire mais également politique. Il motivera les membres du clan à l'accompagner dans cette quête d'occuper des postes à fortes responsabilités.",
   },
 ];
 
 const objectifsPersonnels: ObjectifData[] = [
+  {
+    title: "Dépasser ses limites",
+    content:
+      "Koten continuera  son entrainement afin d'améliorer ses capacités physiques en s'entrainant avec son serviteur et les membres de sa famille. Son but est de montrer aux autres ninjas qu'il est digne de porter le nom Kitsushi malgré ses défauts. Il se dépassera et deviendra un ninja reconnu et redouté dans le monde ninja.",
+  },
   {
     title: "Renforcer son lien avec son serviteur",
     content:
@@ -62,6 +72,11 @@ const objectifsPersonnels: ObjectifData[] = [
     title: "Révolutionner les lois et sanctions de la Seibai",
     content:
       "Le système et les lois d'un village peuvent changer au fur et à mesure de l'évolution de ses habitants. Koten souhaite donc effectuer de la recherche, et partir en reconnaissance dans les autres pays afin d'étudier leur section policière et leur système de loi. Il pense qu'il pourrait potentiellement s'inspirer afin d'améliorer le système de Suna et garantir la sécurité et la perennité du village. L'une des raisons principales de l'apprentissage du Fuinjutsu pour Koten, est d'intégrer cette pratique dans les sanctions du village. Pour Koten, ce genre de sanctions peut-être bénéfique pour empecher le recidivisme et montrer le bon exemple. Bien evidemment, ces sanctions seront adaptés aux infractions commises. Comme vous pouvez le comprendre, le fuinjutsu permettra de placer différents types de sceaux sur l'individu en fonction de la nature de sa sanction.",
+  },
+  {
+    title: "Protecteur du Pays de l'Herbe",
+    content:
+      "Koten souhaite atteindre un statut important au sein de Kusa, non seulement pour casser la chaine sur la mise à l'écart du clan Kitsushi dans le passé mais également pour pouvoir protéger les hautes instances du pays afin d'assurer la prénnité du Pays et montrer son dévouement et sa loyauté au village ayant accepté de les accueillir suite aux évènements.",
   },
 ];
 
@@ -286,7 +301,7 @@ const ObjectifDescription = ({
   });
 
   const iconSrc =
-    type === "clan" ? "/img/Objectif/icon-clan.png" : "/img/Objectif/icon.png";
+    type === "clan" ? "/img/Objectif/icon.png" : "/img/Objectif/icon.png";
 
   return (
     <motion.div

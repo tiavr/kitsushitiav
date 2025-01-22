@@ -8,9 +8,6 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        hero: "url('/img/youtube.gif')",
-      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
