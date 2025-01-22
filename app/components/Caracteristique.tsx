@@ -59,7 +59,7 @@ const CaractereModal = ({ onClose }: { onClose: () => void }) => {
     {
       titre: "Sociable ?",
       description:
-        "Koten se montrera sociable et quelque peu extraverti. Cela lui permet de facilement tisser des liens... tout en masquant ses intentions. Il s'agit principalement d'une façade, afin de facilement gagner la confiance des autres. Sa vraie nature est plutôt calme et posée.",
+        "Koten se montrera sociable et quelque peu extraverti. Cela lui permet de facilement tisser des liens... tout en masquant ses intentions. Il s'agit principalement d'une façade, afin de facilement gagner la confiance des autres. Sa vraie nature est plutôt calme, posée et stoique.",
       gif: "/img/caractéristiques/sociable_gif.gif",
     },
   ];
