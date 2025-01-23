@@ -68,7 +68,7 @@ const CaractereModal = ({ onClose }: { onClose: () => void }) => {
     {
       titre: "Kleptomane",
       description:
-        "Pour se venger des moqueries, Koten a pris la mauvaise habitude voler ses camarades. Il ressent constamment le besoin de voler. A l'époque il volait par vengeance, mais en grandissant il a apprit à voler pour avoir une forme de pression, un contrôle sur les autres. Cela lui donne le sentiment d'avoir le dessus sur les gens.",
+        "Pour se venger des moqueries, Koten a pris la mauvaise habitude de voler ses camarades. Il ressent constamment le besoin de voler. A l'époque il volait par vengeance, mais en grandissant il a apprit à voler pour avoir une forme de pression, un contrôle sur les autres. Cela lui donne le sentiment d'avoir le dessus sur les gens.",
       gif: "/img/caractéristiques/kleptomane.gif", // À remplacer par le vrai GIF
     },
   ];
