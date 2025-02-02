@@ -76,7 +76,7 @@ const objectifsPersonnels: ObjectifData[] = [
   {
     title: "Protecteur du Pays de l'Herbe",
     content:
-      "Koten souhaite atteindre un statut important au sein de Kusa, non seulement pour casser la chaine sur la mise à l'écart du clan Kitsushi dans le passé mais également pour pouvoir protéger les hautes instances du pays afin d'assurer la perénnité du Pays et montrer son dévouement et sa loyauté au village ayant accepté de les accueillir suite aux évènements.",
+      "Koten souhaite atteindre un statut important au sein de Kusa, non seulement, pour casser la chaine sur la mise à l'écart du clan Kitsushi dans le passé mais également pour pouvoir protéger les hautes instances du pays afin d'assurer la perénnité du Pays et montrer son dévouement et sa loyauté au village ayant accepté de les accueillir suite aux évènements.",
   },
 ];
 
