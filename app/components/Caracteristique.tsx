@@ -535,7 +535,9 @@ const Caracteristique = () => {
       width={40}
       height={40}
       className="opacity-80"
-      style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7500%) hue-rotate(0deg) brightness(57%) contrast(118%)' }}
+      style={{
+        filter: 'brightness(0) saturate(100%) invert(11%) sepia(89%) saturate(6391%) hue-rotate(22deg) brightness(85%) contrast(130%)'
+    }}
     />
   </motion.div>
   <motion.div

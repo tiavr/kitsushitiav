@@ -62,8 +62,8 @@ export default function Header() {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className={`p-4 rounded-xl shadow-lg flex items-center gap-2 
             ${isScrolled || isMenuOpen
-              ? 'bg-sand-100/90 dark:bg-sand-700/90 backdrop-blur-sm'
-              : 'bg-sand-200/80 dark:bg-sand-600/80 backdrop-blur-sm'
+              ? 'bg-sand-100/90 dark:bg-rougePerso backdrop-blur-sm'
+              : 'bg-sand-200/80 dark:bg-rougePerso backdrop-blur-sm'
             } 
             hover:shadow-xl transition-all duration-300 group`}
           aria-label="Menu principal"

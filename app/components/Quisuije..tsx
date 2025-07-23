@@ -81,7 +81,7 @@ const Quisuije = () => {
   return (
     <Section
       ref={sectionRef}
-      className="relative min-h-screen bg-[#1a0f0a] py-20 overflow-hidden"
+      className="relative min-h-screen bg-[#000000] py-20 overflow-hidden"
       id="quisuije"
     >
       <div className="absolute inset-0 bg-radial-vignette pointer-events-none z-10" />
@@ -121,7 +121,7 @@ const Quisuije = () => {
           >
             <button
               onClick={() => handleIndexChange("prev")}
-              className="px-8 py-3 rounded-lg bg-black/30 hover:bg-black/50 backdrop-blur-sm
+              className="px-8 py-3 rounded-lg bg-black/40 hover:bg-black/60 backdrop-blur-sm
                        transition-all duration-300 shadow-lg border border-sand-200/10
                        flex items-center gap-2 group"
             >
@@ -160,7 +160,7 @@ const Quisuije = () => {
 
             <button
               onClick={() => handleIndexChange("next")}
-              className="px-8 py-3 rounded-lg bg-black/30 hover:bg-black/50 backdrop-blur-sm
+              className="px-8 py-3 rounded-lg bg-black/40 hover:bg-black/60 backdrop-blur-sm
                        transition-all duration-300 shadow-lg border border-sand-200/10
                        flex items-center gap-2 group"
             >

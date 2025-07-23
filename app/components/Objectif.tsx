@@ -201,9 +201,9 @@ const styles = {
   button: {
     base: "w-full text-left p-4 rounded-xl transition-all backdrop-blur-sm",
     selected:
-      "bg-sand-200/90 text-[#1a0f0a] shadow-[0_0_15px_rgba(224,189,127,0.3)]",
+      "bg-sand-200/90 text-black shadow-[0_0_15px_rgba(224,189,127,0.3)]",
     default:
-      "bg-[#1a0f0a]/80 text-sand-200 hover:bg-[#1a0f0a]/90 hover:shadow-[0_0_10px_rgba(224,189,127,0.1)]",
+      "bg-black/80 text-sand-200 hover:bg-black/90 hover:shadow-[0_0_10px_rgba(224,189,127,0.1)]",
   },
 };
 
@@ -232,7 +232,7 @@ const useObjectifState = () => {
 // Components
 const BackgroundImage = ({ side }: { side: "left" | "right" }) => (
   <motion.div
-    className={`absolute ${side}-0 top-0 h-full w-[40vw] overflow-hidden`}
+    className={`absolute ${side}-0 top-0 h-full w-[25vw] overflow-hidden`}
     variants={animations.background[side]}
     initial="hidden"
     animate="visible"
@@ -252,33 +252,34 @@ const BackgroundImage = ({ side }: { side: "left" | "right" }) => (
       }}
     >
       <Image
-        src="/img/Objectif/Face.png"
+        src="/img/Objectif/Face2.png"
         alt={`Gaara ${side}`}
         fill
-        className="object-cover scale-110"
+        className="object-contain"
         style={{
           filter: "grayscale(100%) brightness(0.1)",
-          transform: side === "left" ? "scaleX(-1)" : "none",
+          transform: side === "left" ? "scaleX(-1) scale(0.7)" : "scale(0.7)",
+          objectPosition: "center 30%"
         }}
       />
     </motion.div>
     <div className={styles.backgroundImage.base}>
       <Image
-        src="/img/Objectif/Face.png"
+        src="/img/Objectif/Face2.png"
         alt={`Gaara ${side}`}
         fill
-        className="object-cover"
+        className="object-contain"
         style={{
-          objectPosition: "50% 50%",
+          objectPosition: "center 30%",
           maskImage: styles.backgroundImage.mask[side],
           WebkitMaskImage: styles.backgroundImage.mask[side],
-          transform: side === "left" ? "scaleX(-1)" : "none",
+          transform: side === "left" ? "scaleX(-1) scale(0.7)" : "scale(0.7)",
         }}
       />
       <div
         className={`absolute inset-0 bg-gradient-to-${
           side === "left" ? "r" : "l"
-        } from-[#1a0f0a] via-transparent to-transparent opacity-90`}
+        } from-black via-transparent to-transparent opacity-90`}
       />
     </div>
   </motion.div>
@@ -397,7 +398,7 @@ const Objectif = () => {
     >
       <Section
         ref={sectionRef}
-        className="relative min-h-screen bg-[#1a0f0a] py-20 overflow-hidden geist-font"
+        className="relative min-h-screen bg-[#000000] py-20 overflow-hidden geist-font"
         id="objectifs"
       >
         <motion.div
