@@ -23,7 +23,7 @@ const stories: StoryData[] = [
   {
     title: "L'Évolution",
     content: "Contenu de l'histoire 2...",
-    backgroundImage: "/img/story/card-2.jpg",
+    backgroundImage: "/img/story/card-2.png",
     modalImage: "/img/story/evolution_modal.png",
   },
   {
@@ -314,6 +314,7 @@ const Story = () => {
               width={40}
               height={40}
               className="opacity-80 fill-white"
+              style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7500%) hue-rotate(0deg) brightness(57%) contrast(118%)' }}
             />
           </motion.div>
           <div className="h-px bg-sand-600 w-full max-w-[200px]" />

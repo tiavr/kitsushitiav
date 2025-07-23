@@ -510,37 +510,40 @@ const Caracteristique = () => {
           Caractéristiques
         </motion.h2>
 
-        <div className="flex items-center justify-center mb-16">
-          <motion.div
-            variants={separatorVariants}
-            className="h-px bg-sand-600 w-full max-w-[200px]"
-          />
-          <motion.div
-            variants={symbolVariants}
-            animate={{
-              rotate: 360,
-              transition: {
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear",
-                delay: 1,
-              },
-            }}
-            className="mx-4"
-          >
-            <Image
-              src="/img/story/symbole.png"
-              alt="Séparateur"
-              width={40}
-              height={40}
-              className="opacity-80"
-            />
-          </motion.div>
-          <motion.div
-            variants={separatorVariants}
-            className="h-px bg-sand-600 w-full max-w-[200px]"
-          />
-        </div>
+      <div className="flex items-center justify-center mb-16">
+  <motion.div
+    variants={separatorVariants}
+    className="h-px w-full max-w-[200px]"
+    style={{ backgroundColor: '#920000' }}
+  />
+  <motion.div
+    variants={symbolVariants}
+    animate={{
+      rotate: 360,
+      transition: {
+        duration: 20,
+        repeat: Infinity,
+        ease: "linear",
+        delay: 1,
+      },
+    }}
+    className="mx-4"
+  >
+    <Image
+      src="/img/story/symbole.png"
+      alt="Séparateur"
+      width={40}
+      height={40}
+      className="opacity-80"
+      style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7500%) hue-rotate(0deg) brightness(57%) contrast(118%)' }}
+    />
+  </motion.div>
+  <motion.div
+    variants={separatorVariants}
+    className="h-px w-full max-w-[200px]"
+    style={{ backgroundColor: '#920000' }}
+  />
+</div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {characteristics.map((characteristic, index) => (
