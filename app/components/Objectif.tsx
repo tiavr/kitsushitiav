@@ -200,11 +200,11 @@ const styles = {
     },
   },
   button: {
-    base: "w-full text-left p-5 rounded-xl transition-all backdrop-blur-sm",
+    base: "w-full text-left p-5 rounded-xl transition-all backdrop-blur-sm focus:outline-none shadow-[0_8px_16px_rgba(0,0,0,0.3),0_4px_8px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.1)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.4),0_6px_12px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.15)] active:shadow-[0_4px_8px_rgba(0,0,0,0.3),0_2px_4px_rgba(0,0,0,0.2),inset_0_2px_4px_rgba(0,0,0,0.2)]",
     selected:
-      "bg-gradient-to-l from-rougePerso to-black/0   ",
+      "bg-gradient-to-l from-rougePerso to-black/0 shadow-[0_10px_20px_rgba(146,0,0,0.4),0_6px_12px_rgba(146,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.2)] focus:from-red-900 focus:to-black/20",
     default:
-      "bg-fondnoir/100 text-rougePerso  hover:bg-fondnoir/90 ",
+      "bg-black/80 text-rougePerso hover:bg-black/90 focus:bg-black/95",
   },
 };
 
@@ -440,6 +440,29 @@ const ObjectifButton = memo(({
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.2 }}
     >
+      {/* Dégradé animé de sélection */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-l from-rougePerso to-transparent"
+        initial={{ opacity: 0, x: "-100%" }}
+        animate={{
+          opacity: isSelected ? 1 : 0,
+          x: isSelected ? "0%" : "-100%"
+        }}
+        transition={{
+          duration: prefersReducedMotion ? 0.1 : 0.5,
+          ease: "easeOut",
+          opacity: { duration: prefersReducedMotion ? 0.1 : 0.3 }
+        }}
+      />
+      
+      {/* Overlay d'assombrissement au focus pour les boutons sélectionnés */}
+      {isSelected && (
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-l from-red-900/60 to-black/30 opacity-0 focus-within:opacity-100 transition-opacity duration-200"
+          initial={{ opacity: 0 }}
+        />
+      )}
+      
       {/* Effet de brillance au hover */}
       {!prefersReducedMotion && !isLowPerfDevice && (
         <motion.div
@@ -450,16 +473,12 @@ const ObjectifButton = memo(({
         />
       )}
       
-      {/* Indicateur de sélection */}
-      {isSelected && (
-        <motion.div
-          className="absolute left-0 top-0 bottom-0 w-1 bg-rougePerso"
-          layoutId="activeIndicator"
-          transition={{ duration: 0.3 }}
-        />
-      )}
+
       
-      <span className="font-medium text-base leading-tight relative z-10 group-hover:text-white transition-colors duration-200">
+      <span 
+        className="font-medium text-base leading-tight relative z-10 group-hover:text-gray-200 group-focus:text-gray-300 transition-colors duration-200"
+        style={{ fontFamily: "Edo" }}
+      >
         {title}
       </span>
     </motion.button>
@@ -522,7 +541,7 @@ const Objectif = () => {
               <motion.button
                 key={tab}
                 onClick={() => handleTabChange(tab as "clan" | "personnels")}
-                className={`px-8 py-4 rounded-xl text-xl font-bold transition-all
+                className={`px-8 py-4 rounded-xl text-xl font-bold transition-all focus:outline-none
                   ${
                     activeTab === tab
                       ? "bg-rougePerso text-black/70 shadow-lg scale-105"
@@ -564,16 +583,34 @@ const Objectif = () => {
                 {selectedObjectif && (
                   <motion.div
                     key={selectedObjectif.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    className="bg-gradient-to-b from-gray-900/90 to-black/90 backdrop-blur-sm rounded-xl p-6 border border-amber-400/20 shadow-xl"
+                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -30, scale: 0.95 }}
+                    transition={{
+                      duration: 0.4,
+                      ease: "easeOut",
+                      scale: { duration: 0.3 }
+                    }}
+                    className="relative bg-gradient-to-br from-gray-900/95 via-gray-800/90 to-black/95 backdrop-blur-md rounded-2xl p-8 border border-rougePerso/30 shadow-[0_20px_40px_rgba(0,0,0,0.4),0_10px_20px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.1)] hover:shadow-[0_25px_50px_rgba(146,0,0,0.3),0_15px_25px_rgba(0,0,0,0.4),inset_0_1px_3px_rgba(255,255,255,0.15)] transition-all duration-300 overflow-hidden group"
+                    whileHover={{ y: -2, scale: 1.01 }}
                   >
-                    <ObjectifTitle title={selectedObjectif.title} />
-                    <ObjectifDescription
-                      content={selectedObjectif.content}
-                      isVisible={isSectionInView}
-                      type={activeTab}
+
+                    
+
+                    
+                    {/* Contenu */}
+                    <div className="relative z-10">
+                      <ObjectifTitle title={selectedObjectif.title} />
+                      <ObjectifDescription
+                        content={selectedObjectif.content}
+                        isVisible={isSectionInView}
+                        type={activeTab}
+                      />
+                    </div>
+                    
+                    {/* Effet de glow au hover */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-rougePerso/10 via-transparent to-blue-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     />
                   </motion.div>
                 )}
