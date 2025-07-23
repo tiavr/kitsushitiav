@@ -289,11 +289,13 @@ const Story = () => {
       <InfoButton />
 
       <motion.div
-        className="container mx-auto px-6"
+        className="container mx-auto px-6 relative z-10"
         variants={containerVariants}
         initial="hidden"
         animate={isSectionInView ? "visible" : "hidden"}
       >
+        {/* Fond gris similaire au Hero */}
+        <div className="absolute inset-0 pointer-events-none bg-hero -z-10"></div>
         <motion.div variants={titleVariants} className="text-center mb-12">
           <h2 className="text-5xl text-rougePerso font-bold">Histoire</h2>
         </motion.div>

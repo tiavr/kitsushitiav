@@ -129,14 +129,14 @@ export default function Hero() {
           alt="Village de Kusa"
           fill
           priority
-          className="object-cover blur-sm"
+          className="object-cover"
           sizes="100vw"
           quality={90}
         />
       </motion.div>
 
       {/* Particules flottantes */}
-      <div className="absolute inset-0 pointer-events-none bg-hero">
+      <div className="absolute inset-0 pointer-events-none ">
         {particles.map((particle) => (
           <motion.div
             key={particle.id}
