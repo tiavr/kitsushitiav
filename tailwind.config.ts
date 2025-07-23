@@ -9,6 +9,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        rougePerso: '#920000',
+        fondgris: '#C5C4C4',
         background: "var(--background)",
         foreground: "var(--foreground)",
         sand: {

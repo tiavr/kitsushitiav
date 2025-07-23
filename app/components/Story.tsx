@@ -282,9 +282,10 @@ const Story = () => {
   return (
     <Section
       ref={sectionRef}
-      className="py-20 relative bg-[black]"
+      className="py-20 relative bg-fondgris"
       id="histoire"
     >
+      {/* Aucune transition visible entre les sections */}
       <InfoButton />
 
       <motion.div
@@ -294,7 +295,7 @@ const Story = () => {
         animate={isSectionInView ? "visible" : "hidden"}
       >
         <motion.div variants={titleVariants} className="text-center mb-12">
-          <h2 className="text-5xl text-sand-200 font-bold">Histoire</h2>
+          <h2 className="text-5xl text-rougePerso font-bold">Histoire</h2>
         </motion.div>
 
         <motion.div

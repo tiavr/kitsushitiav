@@ -43,7 +43,8 @@ export default function Hero() {
   });
 
   const parallaxY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  // Suppression de l'effet d'opacité au scroll
+  const opacity = 1;
   const scrollTitleY = useTransform(scrollYProgress, [0, 1], ["0%", "35%"]);
   const characterX = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
   const characterOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
@@ -97,7 +98,7 @@ export default function Hero() {
   };
 
   const characterVariants = {
-    hidden: { x: 100, opacity: 0 },
+    hidden: { x: -100, opacity: 0 },
     visible: {
       x: 0,
       opacity: 1,
@@ -172,6 +173,8 @@ export default function Hero() {
           ease: "easeInOut",
         }}
       />
+      
+      {/* Aucune transition visible entre les sections */}
 
       {/* Title avec effet de suivi de souris */}
       <motion.div
@@ -210,7 +213,7 @@ export default function Hero() {
       {/* Character */}
       <motion.div
         variants={characterVariants}
-        className="absolute -bottom-20 right-0 w-[700px] h-[900px] z-20"
+        className="absolute -bottom-20 left-0 w-[750px] h-[950px] z-20"
         style={{
           x: characterX,
           opacity: characterOpacity,
@@ -232,14 +235,14 @@ export default function Hero() {
             alt="Koten Kitsushi Character"
             fill
             className="object-contain object-bottom"
-            sizes="(max-width: 768px) 100vw, 800px"
+            sizes="(max-width: 768px) 100vw, 850px"
             quality={90}
             style={{
               filter: "drop-shadow(0 0 20px rgba(0,0,0,0.3))",
               maskImage:
-                "linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0.7) 15%, rgba(0,0,0,0))",
+                "linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0.7) 15%, rgba(0,0,0,0))",
               WebkitMaskImage:
-                "linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0.7) 20%, rgba(0,0,0,0))",
+                "linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0.7) 20%, rgba(0,0,0,0))",
             }}
           />
         </div>
