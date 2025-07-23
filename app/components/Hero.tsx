@@ -125,7 +125,7 @@ export default function Hero() {
         className="absolute inset-0"
       >
         <Image
-          src="/img/Accueil.png"
+          src="/img/test-inu.png"
           alt="Village de Kusa"
           fill
           priority
@@ -173,7 +173,7 @@ export default function Hero() {
           ease: "easeInOut",
         }}
       />
-      
+
       {/* Aucune transition visible entre les sections */}
 
       {/* Title avec effet de suivi de souris */}
