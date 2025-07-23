@@ -7,29 +7,72 @@ import {
   useTransform,
   useMotionValue,
   useSpring,
+  useReducedMotion,
 } from "framer-motion";
-import { useRef, useEffect, useMemo } from "react";
+import { useRef, useEffect, useMemo, useState } from "react";
 import { useInView } from "../hooks/useInView";
+
+// Hook pour optimiser les animations sur les appareils à faible performance
+const useOptimizedAnimations = () => {
+  const [isLowPerfDevice, setIsLowPerfDevice] = useState(false);
+  
+  useEffect(() => {
+    // Détection simple des appareils à faible performance
+    const isLowEnd = 
+      navigator.hardwareConcurrency <= 4 || 
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    setIsLowPerfDevice(isLowEnd);
+  }, []);
+  
+  return isLowPerfDevice;
+};
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-
-  const springConfig = { damping: 25, stiffness: 100 };
+  const prefersReducedMotion = useReducedMotion();
+  const isLowPerfDevice = useOptimizedAnimations();
+  
+  // Réduire la complexité des animations si nécessaire
+  const shouldReduceMotion = prefersReducedMotion || isLowPerfDevice;
+  
+  const springConfig = shouldReduceMotion 
+    ? { damping: 50, stiffness: 200 } // Configuration plus légère
+    : { damping: 25, stiffness: 100 };
+    
   const titleX = useSpring(mouseX, springConfig);
 
   useEffect(() => {
+    // Désactiver le suivi de souris si l'utilisateur préfère réduire les animations
+    if (shouldReduceMotion) {
+      mouseX.set(0);
+      mouseY.set(0);
+      return;
+    }
+    
     const handleMouseMove = (e: MouseEvent) => {
-      const xOffset = (e.clientX - window.innerWidth / 2) * 0.02;
-      const yOffset = (e.clientY - window.innerHeight / 2) * 0.02;
-      mouseX.set(xOffset);
-      mouseY.set(yOffset);
+      // Throttle pour limiter les mises à jour
+      if (!window.requestAnimationFrame) {
+        const xOffset = (e.clientX - window.innerWidth / 2) * 0.02;
+        const yOffset = (e.clientY - window.innerHeight / 2) * 0.02;
+        mouseX.set(xOffset);
+        mouseY.set(yOffset);
+        return;
+      }
+      
+      window.requestAnimationFrame(() => {
+        const xOffset = (e.clientX - window.innerWidth / 2) * 0.02;
+        const yOffset = (e.clientY - window.innerHeight / 2) * 0.02;
+        mouseX.set(xOffset);
+        mouseY.set(yOffset);
+      });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
+  }, [mouseX, mouseY, shouldReduceMotion]);
 
   const isInView = useInView(ref, {
     threshold: 0.2,
@@ -42,25 +85,16 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const parallaxY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  // Suppression de l'effet d'opacité au scroll
+  // Réduire l'amplitude des animations parallaxes si nécessaire
+  const parallaxAmount = shouldReduceMotion ? 0.5 : 1;
+  
+  const parallaxY = useTransform(scrollYProgress, [0, 1], ["0%", `${15 * parallaxAmount}%`]);
   const opacity = 1;
-  const scrollTitleY = useTransform(scrollYProgress, [0, 1], ["0%", "35%"]);
-  const characterX = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
-  const characterOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
+  const scrollTitleY = useTransform(scrollYProgress, [0, 1], ["0%", `${35 * parallaxAmount}%`]);
+  const characterX = useTransform(scrollYProgress, [0, 1], ["0%", `${-25 * parallaxAmount}%`]);
+  const characterOpacity = useTransform(scrollYProgress, [0, 0.8], [1, shouldReduceMotion ? 0.5 : 0.3]);
 
-  const particles = useMemo(() => {
-    return Array.from({ length: 15 }, (_, i) => {
-      const seed = i + 1;
-      return {
-        id: i,
-        x: `${(seed * 7) % 100}`,
-        y: `${(seed * 13) % 100}`,
-        size: `${2 + (seed % 2)}`,
-        duration: 10 + (seed % 10),
-      };
-    });
-  }, []);
+  // Particules supprimées
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -97,7 +131,7 @@ export default function Hero() {
     },
   };
 
-  const characterVariants = {
+  const characterLeftVariants = {
     hidden: { x: -100, opacity: 0 },
     visible: {
       x: 0,
@@ -109,6 +143,39 @@ export default function Hero() {
     },
   };
 
+  const characterRightVariants = {
+    hidden: { x: 100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  // Variants pour l'animation du GIF avec optimisation
+  const gifVariants = useMemo(() => ({
+    hidden: { y: shouldReduceMotion ? -20 : -50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: shouldReduceMotion ? 0.8 : 1.2,
+        ease: "easeOut",
+        delay: shouldReduceMotion ? 0.1 : 0.3
+      },
+    },
+  }), [shouldReduceMotion]);
+
+  // Création de la transformation pour le personnage de droite
+  const rightCharacterTransform = useTransform(
+    scrollYProgress, 
+    [0, 1], 
+    ["0%", `${25 * parallaxAmount}%`]
+  );
+
   return (
     <motion.div
       ref={ref}
@@ -117,74 +184,58 @@ export default function Hero() {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       style={{ opacity }}
+      aria-label="Section d'accueil avec animation Naruto"
     >
-      {/* Background Image */}
+      {/* Background Color */}
       <motion.div
         variants={backgroundVariants}
         style={{ y: parallaxY }}
-        className="absolute inset-0"
+        className="absolute inset-0 bg-[#C5C4C4]"
       >
-        <Image
-          src="/img/test-inu.png"
-          alt="Village de Kusa"
-          fill
-          priority
-          className="object-cover blur-sm"
-          sizes="100vw"
-          quality={90}
-        />
       </motion.div>
 
-      {/* Particules flottantes */}
-      <div className="absolute inset-0 pointer-events-none bg-hero">
-        {particles.map((particle) => (
-          <motion.div
-            key={particle.id}
-            className="absolute rounded-full bg-white/20 backdrop-blur-sm"
-            style={{
-              width: `${particle.size}px`,
-              height: `${particle.size}px`,
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              x: [0, 15, 0],
-              opacity: [0.4, 0.8, 0.4],
-            }}
-            transition={{
-              duration: particle.duration,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Effet de lumière ambiante */}
+      {/* GIF centré au-dessus du titre */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 pointer-events-none"
-        animate={{
-          opacity: [0.3, 0.5, 0.3],
+        variants={gifVariants}
+        className="absolute top-[5%] inset-x-0 mx-auto flex justify-center items-center z-40"
+        style={{
+          y: useTransform(scrollYProgress, [0, 1], ["0%", `${25 * parallaxAmount}%`]),
         }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
+        whileHover={shouldReduceMotion ? {} : {
+          scale: 1.05,
+          filter: "brightness(1.1)",
+          transition: { duration: 0.3 },
         }}
-      />
+      >
+        <div className="relative w-[400px] h-[200px]">
+          <Image
+            src="/img/Hero/glitch-logo.gif"
+            alt="Glitch Logo Animation"
+            fill
+            className="object-contain"
+            sizes="(max-width: 768px) 80vw, 400px"
+            priority
+            loading="eager"
+            fetchPriority="high"
+          />
+        </div>
+      </motion.div>
+
+      {/* Particules flottantes supprimées */}
+
+      {/* Effet de lumière ambiante supprimé */}
 
       {/* Aucune transition visible entre les sections */}
 
       {/* Title avec effet de suivi de souris */}
       <motion.div
         variants={titleVariants}
-        className="absolute inset-0 flex items-center justify-center"
+        className="absolute inset-0 flex items-center justify-center z-30" /* Augmentation du z-index à 30 pour être au premier plan */
         style={{
           x: titleX,
           y: scrollTitleY,
         }}
-        whileHover={{
+        whileHover={shouldReduceMotion ? {} : {
           scale: 1.02,
           filter: "brightness(1.1)",
           transition: { duration: 0.3 },
@@ -203,17 +254,19 @@ export default function Hero() {
             width={1000}
             height={600}
             priority
+            loading="eager"
+            fetchPriority="high"
             className="z-10 transition-all duration-300"
             sizes="(max-width: 768px) 90vw, 1000px"
-            quality={90}
+            quality={shouldReduceMotion ? 80 : 90}
           />
         </motion.div>
       </motion.div>
 
-      {/* Character */}
+      {/* Character Left */}
       <motion.div
-        variants={characterVariants}
-        className="absolute -bottom-20 left-0 w-[750px] h-[950px] z-20"
+        variants={characterLeftVariants}
+        className="absolute -bottom-20 left-0 w-[750px] h-[950px] z-10" /* z-index reste à 10 pour être en arrière-plan */
         style={{
           x: characterX,
           opacity: characterOpacity,
@@ -232,7 +285,7 @@ export default function Hero() {
         <div className="relative w-full h-full">
           <Image
             src="/img/ninja.png"
-            alt="Koten Kitsushi Character"
+            alt="Koten Kitsushi Character Left"
             fill
             className="object-contain object-bottom"
             sizes="(max-width: 768px) 100vw, 850px"
@@ -240,9 +293,48 @@ export default function Hero() {
             style={{
               filter: "drop-shadow(0 0 20px rgba(0,0,0,0.3))",
               maskImage:
-                "linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0.7) 15%, rgba(0,0,0,0))",
+                "linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0.7) 15%, rgba(0,0,0,0))",
               WebkitMaskImage:
-                "linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0.7) 20%, rgba(0,0,0,0))",
+                "linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0.7) 20%, rgba(0,0,0,0))",
+            }}
+          />
+        </div>
+      </motion.div>
+      
+      {/* Character Right (Cloned from Left and Mirrored) */}
+      <motion.div
+        variants={characterRightVariants}
+        className="absolute -bottom-20 right-0 w-[750px] h-[950px] z-10" /* z-index reste à 10 pour être en arrière-plan */
+        style={{
+          // Inverser la direction pour le personnage de droite
+          x: rightCharacterTransform,
+          opacity: characterOpacity,
+        }}
+        animate={{
+          y: [0, -10, 0],
+        }}
+        transition={{
+          y: {
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          },
+        }}
+      >
+        <div className="relative w-full h-full">
+          <Image
+            src="/img/ninja.png"
+            alt="Koten Kitsushi Character Right"
+            fill
+            className="object-contain object-bottom scale-x-[-1]" // Effet miroir horizontal
+            sizes="(max-width: 768px) 100vw, 850px"
+            quality={90}
+            style={{
+              filter: "drop-shadow(0 0 20px rgba(0,0,0,0.3))",
+              maskImage:
+                "linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0.7) 15%, rgba(0,0,0,0))",
+              WebkitMaskImage:
+                "linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0.7) 20%, rgba(0,0,0,0))",
             }}
           />
         </div>
