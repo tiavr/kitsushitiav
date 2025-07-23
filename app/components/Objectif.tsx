@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef, useEffect, useMemo, memo } from "react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { Section } from "../components/Section";
 import { useInView } from "../hooks/useInView";
+import SectionCloud from "./AnimatedCloud";
 
 // Types
 interface ObjectifData {
@@ -193,24 +194,39 @@ const styles = {
   backgroundImage: {
     base: "absolute inset-0",
     mask: {
-      left: "linear-gradient(to right, transparent, black 30%, black 70%, transparent)",
+      left: "linear-gradient(to right, transparent, black 80%, black 0%, transparent)",
       right:
-        "linear-gradient(to left, transparent, black 30%, black 70%, transparent)",
+        "linear-gradient(to left, transparent, black 0%, black 0%, transparent)",
     },
   },
   button: {
-    base: "w-full text-left p-4 rounded-xl transition-all backdrop-blur-sm",
+    base: "w-full text-left p-5 rounded-xl transition-all backdrop-blur-sm",
     selected:
-      "bg-sand-200/90 text-black shadow-[0_0_15px_rgba(224,189,127,0.3)]",
+      "bg-gradient-to-l from-rougePerso to-black/0   ",
     default:
-      "bg-black/80 text-sand-200 hover:bg-black/90 hover:shadow-[0_0_10px_rgba(224,189,127,0.1)]",
+      "bg-fondnoir/100 text-rougePerso  hover:bg-fondnoir/90 ",
   },
+};
+
+// Hook pour optimiser les animations
+const useOptimizedAnimations = () => {
+  const [isLowPerfDevice, setIsLowPerfDevice] = useState(false);
+  
+  useEffect(() => {
+    const isLowEnd = 
+      navigator.hardwareConcurrency <= 4 || 
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    setIsLowPerfDevice(isLowEnd);
+  }, []);
+  
+  return isLowPerfDevice;
 };
 
 // Custom Hook
 const useObjectifState = () => {
   const [activeTab, setActiveTab] = useState<"clan" | "personnels">("clan");
-  const [selectedObjectif, setSelectedObjectif] = useState<ObjectifData>(
+  const [selectedObjectif, setSelectedObjectif] = useState<ObjectifData | null>(
     objectifsClan[0]
   );
 
@@ -229,63 +245,79 @@ const useObjectifState = () => {
   };
 };
 
-// Components
-const BackgroundImage = ({ side }: { side: "left" | "right" }) => (
-  <motion.div
-    className={`absolute ${side}-0 top-0 h-full w-[25vw] overflow-hidden`}
-    variants={animations.background[side]}
-    initial="hidden"
-    animate="visible"
-    exit="exit"
-    key={`background-${side}`}
-  >
-    <motion.div
-      className="absolute inset-0 blur-[100px] opacity-30"
-      animate={{
-        scale: [1, 1.1, 1],
-        opacity: [0.3, 0.4, 0.3],
-      }}
-      transition={{
-        duration: 8,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    >
-      <Image
-        src="/img/Objectif/Face2.png"
-        alt={`Gaara ${side}`}
-        fill
-        className="object-contain"
-        style={{
-          filter: "grayscale(100%) brightness(0.1)",
-          transform: side === "left" ? "scaleX(-1) scale(0.7)" : "scale(0.7)",
-          objectPosition: "center 30%"
-        }}
-      />
-    </motion.div>
-    <div className={styles.backgroundImage.base}>
-      <Image
-        src="/img/Objectif/Face2.png"
-        alt={`Gaara ${side}`}
-        fill
-        className="object-contain"
-        style={{
-          objectPosition: "center 30%",
-          maskImage: styles.backgroundImage.mask[side],
-          WebkitMaskImage: styles.backgroundImage.mask[side],
-          transform: side === "left" ? "scaleX(-1) scale(0.7)" : "scale(0.7)",
-        }}
-      />
-      <div
-        className={`absolute inset-0 bg-gradient-to-${
-          side === "left" ? "r" : "l"
-        } from-black via-transparent to-transparent opacity-90`}
-      />
+// Components optimisés
+const BackgroundImage = memo(({ side, isVisible }: { side: "left" | "right"; isVisible: boolean }) => {
+  const prefersReducedMotion = useReducedMotion();
+  const isLowPerfDevice = useOptimizedAnimations();
+  
+  return (
+    <div className={`absolute ${side}-0 top-0 h-full w-[25vw] overflow-hidden pointer-events-none`}>
+      {/* Image de fond fixe - ne bouge plus lors des sélections */}
+      <motion.div
+        className="absolute inset-0 opacity-15"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isVisible ? 0.15 : 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        {/* Effet de blur animé seulement si performance OK */}
+        {!prefersReducedMotion && !isLowPerfDevice && (
+          <motion.div
+            className="absolute inset-0 blur-[100px] opacity-30"
+            animate={{
+              scale: [1, 1.05, 1],
+              opacity: [0.2, 0.3, 0.2],
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <Image
+              src="/img/Objectif/Face2.png"
+              alt={`Gaara ${side} blur`}
+              fill
+              className="object-contain"
+              style={{
+                filter: "grayscale(100%) brightness(0.05)",
+                transform: side === "left" ? "scaleX(-1) scale(0.7)" : "scale(0.7)",
+                objectPosition: "center 30%"
+              }}
+              priority={false}
+              loading="lazy"
+            />
+          </motion.div>
+        )}
+        
+        {/* Image principale fixe */}
+        <div className={styles.backgroundImage.base}>
+          <Image
+            src="/img/Objectif/Face2.png"
+            alt={`Gaara ${side}`}
+            fill
+            className="object-contain"
+            style={{
+              objectPosition: "center 30%",
+              maskImage: styles.backgroundImage.mask[side],
+              WebkitMaskImage: styles.backgroundImage.mask[side],
+              transform: side === "left" ? "scaleX(-1) scale(0.7)" : "scale(0.7)",
+            }}
+            priority={true}
+          />
+          <div
+            className={`absolute inset-0 bg-gradient-to-${
+              side === "left" ? "r" : "l"
+            } from-transparent via-transparent to-transparent opacity-90`}
+          />
+        </div>
+      </motion.div>
     </div>
-  </motion.div>
-);
+  );
+});
 
-const ObjectifDescription = ({
+BackgroundImage.displayName = "BackgroundImage";
+
+const ObjectifDescription = memo(({
   content,
   isVisible,
   type,
@@ -295,14 +327,19 @@ const ObjectifDescription = ({
   type: "clan" | "personnels";
 }) => {
   const contentRef = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useReducedMotion();
+  const isLowPerfDevice = useOptimizedAnimations();
+  
   const isContentInView = useInView(contentRef, {
     threshold: 0.1,
     once: false,
     rootMargin: "0px",
   });
 
-  const iconSrc =
-    type === "clan" ? "/img/Objectif/icon.png" : "/img/Objectif/icon.png";
+  const iconSrc = useMemo(() => 
+    type === "clan" ? "/img/Objectif/icon.png" : "/img/Objectif/icon.png",
+    [type]
+  );
 
   return (
     <motion.div
@@ -312,34 +349,66 @@ const ObjectifDescription = ({
       animate={isVisible && isContentInView ? "visible" : "hidden"}
       className="flex flex-col items-center gap-8"
     >
-      <p className="text-sand-300 leading-relaxed text-lg w-full">{content}</p>
-      <motion.div
-        className="flex-shrink-0 w-40 h-40"
-        whileHover={{ scale: 1.1 }}
-        transition={{ duration: 0.3 }}
+      <motion.p 
+        className="text-sand-100 leading-relaxed text-lg w-full"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
       >
+        {content}
+      </motion.p>
+      
+      <motion.div
+        className="flex-shrink-0 w-40 h-40 relative"
+        whileHover={prefersReducedMotion || isLowPerfDevice ? {} : { 
+          scale: 1.1,
+          rotate: 5
+        }}
+        transition={{ duration: 0.3 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+      >
+        {/* Effet de glow derrière l'icône */}
+        {!prefersReducedMotion && !isLowPerfDevice && (
+          <motion.div
+            className="absolute inset-0 rounded-full bg-rougePerso/20 blur-xl"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.6, 0.3]
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        )}
+        
         <Image
           src={iconSrc}
           alt="Objectif icon"
           width={160}
           height={160}
-          className="object-contain"
+          className="object-contain relative z-10 drop-shadow-lg"
+          loading="lazy"
         />
       </motion.div>
     </motion.div>
   );
-};
+});
+
+ObjectifDescription.displayName = "ObjectifDescription";
 
 const ObjectifTitle = ({ title }: { title: string }) => (
   <h3
-    className="text-3xl font-bold text-sand-200 mb-8"
+    className="text-3xl font-bold text-rougeTitle mb-8"
     style={{ fontFamily: "Edo" }}
   >
     {title}
   </h3>
 );
 
-const ObjectifButton = ({
+const ObjectifButton = memo(({
   title,
   isSelected,
   onClick,
@@ -350,33 +419,54 @@ const ObjectifButton = ({
   onClick: () => void;
   index: number;
 }) => {
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const isButtonInView = useInView(buttonRef, {
-    threshold: 0.1,
-    once: false,
-    rootMargin: "0px",
-  });
-
+  const prefersReducedMotion = useReducedMotion();
+  const isLowPerfDevice = useOptimizedAnimations();
+  
   return (
     <motion.button
-      ref={buttonRef}
-      variants={animations.button}
-      initial="hidden"
-      animate={isButtonInView ? "visible" : "hidden"}
-      custom={index}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
       onClick={onClick}
-      className={`${styles.button.base} ${
+      className={`${
+        styles.button.base
+      } ${
         isSelected ? styles.button.selected : styles.button.default
-      }`}
+      } relative overflow-hidden group`}
+      variants={animations.button}
+      custom={index}
+      whileHover={prefersReducedMotion || isLowPerfDevice ? {} : { 
+        scale: 1.02, 
+        x: 8,
+        boxShadow: "0 10px 25px rgba(220, 38, 38, 0.2)"
+      }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ duration: 0.2 }}
     >
-      <span className="font-bold" style={{ fontFamily: "Edo" }}>
+      {/* Effet de brillance au hover */}
+      {!prefersReducedMotion && !isLowPerfDevice && (
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+          initial={{ x: "-100%" }}
+          whileHover={{ x: "100%" }}
+          transition={{ duration: 0.6 }}
+        />
+      )}
+      
+      {/* Indicateur de sélection */}
+      {isSelected && (
+        <motion.div
+          className="absolute left-0 top-0 bottom-0 w-1 bg-rougePerso"
+          layoutId="activeIndicator"
+          transition={{ duration: 0.3 }}
+        />
+      )}
+      
+      <span className="font-medium text-base leading-tight relative z-10 group-hover:text-white transition-colors duration-200">
         {title}
       </span>
     </motion.button>
   );
-};
+});
+
+ObjectifButton.displayName = "ObjectifButton";
 
 const Objectif = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -398,24 +488,22 @@ const Objectif = () => {
     >
       <Section
         ref={sectionRef}
-        className="relative min-h-screen bg-[#000000] py-20 overflow-hidden geist-font"
+        className="relative min-h-screen bg-gradient-to-b from-[#C5C4C4] via-[#C5C4C4] to-black py-20 overflow-hidden geist-font"
         id="objectifs"
       >
+        {/* Nuages qui "bugguent" dans cette section */}
+        <SectionCloud cloudCount={1} />
+        
         <motion.div
-          className="absolute inset-0 bg-radial-vignette pointer-events-none z-10"
+          className="absolute inset-0 pointer-events-none z-10"
           initial={{ opacity: 0 }}
-          animate={{ opacity: isSectionInView ? 1 : 0 }}
+          animate={{ opacity: isSectionInView ? 0.4 : 0 }}
           transition={{ duration: 1 }}
         />
 
-        <AnimatePresence mode="wait">
-          {isSectionInView && (
-            <>
-              <BackgroundImage key="background-left" side="left" />
-              <BackgroundImage key="background-right" side="right" />
-            </>
-          )}
-        </AnimatePresence>
+        {/* Images de fond fixes - ne bougent plus lors des sélections */}
+        <BackgroundImage side="left" isVisible={isSectionInView} />
+        <BackgroundImage side="right" isVisible={isSectionInView} />
 
         <motion.div
           className="container mx-auto px-6 relative z-20"
@@ -423,7 +511,7 @@ const Objectif = () => {
         >
           <motion.h2
             variants={animations.title}
-            className="text-5xl font-bold text-sand-200 text-center mb-12"
+            className="text-5xl font-bold text-rougePerso/70 text-center mb-12 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
             style={{ fontFamily: "Edo" }}
           >
             Objectifs
@@ -437,8 +525,8 @@ const Objectif = () => {
                 className={`px-8 py-4 rounded-xl text-xl font-bold transition-all
                   ${
                     activeTab === tab
-                      ? "bg-sand-200 text-[#2A1810] shadow-lg scale-105"
-                      : "bg-[#2A1810]/30 text-sand-200 hover:bg-[#2A1810]/50"
+                      ? "bg-rougePerso text-black/70 shadow-lg scale-105"
+                      : "bg-gray-900/70 text-amber-100 hover:bg-gray-800/90 border border-amber-400/30"
                   }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -479,8 +567,7 @@ const Objectif = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
-                    className="bg-[#1a0f0a]/90 backdrop-blur-sm rounded-2xl p-8 h-full
-                             shadow-[0_0_30px_rgba(0,0,0,0.5)] border border-sand-200/10"
+                    className="bg-gradient-to-b from-gray-900/90 to-black/90 backdrop-blur-sm rounded-xl p-6 border border-amber-400/20 shadow-xl"
                   >
                     <ObjectifTitle title={selectedObjectif.title} />
                     <ObjectifDescription

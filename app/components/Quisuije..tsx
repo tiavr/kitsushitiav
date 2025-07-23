@@ -94,7 +94,7 @@ const Quisuije = () => {
       >
         <motion.h2
           variants={titleVariants}
-          className="text-5xl text-sand-200 font-bold text-center mb-12"
+          className="text-5xl text-amber-400 font-bold text-center mb-12 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
         >
           Qui suis-je ?
         </motion.h2>
@@ -102,7 +102,7 @@ const Quisuije = () => {
         <div className="max-w-6xl mx-auto relative">
           <motion.div
             variants={imageVariants}
-            className="relative aspect-video rounded-2xl overflow-hidden shadow-lg border border-sand-200/10"
+            className="relative aspect-video rounded-2xl overflow-hidden shadow-lg border border-amber-400/20"
           >
             <Image
               src={images[currentIndex].src}
@@ -121,9 +121,9 @@ const Quisuije = () => {
           >
             <button
               onClick={() => handleIndexChange("prev")}
-              className="px-8 py-3 rounded-lg bg-black/40 hover:bg-black/60 backdrop-blur-sm
-                       transition-all duration-300 shadow-lg border border-sand-200/10
-                       flex items-center gap-2 group"
+              className="px-8 py-3 rounded-lg bg-gray-900/70 hover:bg-gray-800/90 backdrop-blur-sm
+                        transition-all duration-300 shadow-lg border border-amber-400/30
+                        flex items-center gap-2 group"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -151,8 +151,8 @@ const Quisuije = () => {
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-all ${
                     index === currentIndex
-                      ? "bg-sand-200 scale-125"
-                      : "bg-sand-200/30 hover:bg-sand-200/50"
+                      ? "bg-amber-400 scale-125"
+                      : "bg-amber-400/30 hover:bg-amber-400/50"
                   }`}
                 />
               ))}

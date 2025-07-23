@@ -10,7 +10,9 @@ export default {
     extend: {
       colors: {
         rougePerso: '#bd0000',
+        rougeTitle: '#cc2929',
         fondgris: '#C5C4C4',
+        fondnoir: '#1a1a1a',
         background: "var(--background)",
         foreground: "var(--foreground)",
         sand: {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import SectionCloud from "./AnimatedCloud";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Section } from "../components/Section";
@@ -497,6 +498,9 @@ const Caracteristique = () => {
       className="py-20 relative bg-[#C5C4C4]"
       id="caracteristiques"
     >
+      {/* Nuages qui "bugguent" dans cette section */}
+      <SectionCloud cloudCount={2} />
+      
       <motion.div
         className="container mx-auto px-6"
         variants={containerVariants}
