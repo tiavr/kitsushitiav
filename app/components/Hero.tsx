@@ -197,7 +197,7 @@ export default function Hero() {
       {/* GIF centré au-dessus du titre */}
       <motion.div
         variants={gifVariants}
-        className="absolute top-[3%] sm:top-[5%] inset-x-0 mx-auto flex justify-center items-center z-40 px-4"
+        className="absolute top-[3%] sm:top-[5%] inset-x-0 mx-auto flex justify-center items-center z-30 px-4"
         style={{
           y: useTransform(scrollYProgress, [0, 1], ["0%", `${25 * parallaxAmount}%`]),
         }}

@@ -101,7 +101,7 @@ export default function Header() {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 z-40 bg-sand-50/95 dark:bg-sand-700/95 backdrop-blur-md flex items-center justify-center px-4"
+            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-md flex items-center justify-center px-4"
           >
             <nav className="flex flex-col items-center space-y-6 sm:space-y-8 w-full max-w-md">
               {navItems.map((item, i) => (
@@ -116,11 +116,11 @@ export default function Header() {
                   <Link
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-xl sm:text-2xl md:text-3xl font-bold text-sand-600 dark:text-sand-200 hover:text-sand-400 
-                             dark:hover:text-sand-300 transition-colors duration-200 relative group block"
+                    className="text-xl sm:text-2xl md:text-3xl font-bold text-rougePerso hover:text-rougePerso/80 
+                             transition-colors duration-200 relative group block"
                   >
                     {item.name}
-                    <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-sand-400 group-hover:w-full transition-all duration-300" />
+                    <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-rougePerso/70 group-hover:w-full transition-all duration-300" />
                   </Link>
                 </motion.div>
               ))}
