@@ -26,21 +26,21 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-[#000000] text-sand-200 py-8 overflow-hidden">
+    <footer className="relative bg-[#000000] text-sand-200 py-6 sm:py-8 overflow-hidden">
       {/* Background texture */}
       <div className="absolute inset-0 opacity-5">
         <div className="sand-texture w-full h-full" />
       </div>
 
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 relative z-10">
           {/* Logo et Description */}
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex items-center gap-4 group"
+            className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 group text-center sm:text-left"
           >
             {/* Logo animé avec effets avancés */}
             <motion.div
@@ -80,9 +80,9 @@ const Footer = () => {
                 <Image
                   src="/img/story/symbole.png"
                   alt="Logo Suna"
-                  width={48}
-                  height={48}
-                  className="drop-shadow-lg transition-all duration-300 group-hover:drop-shadow-xl"
+                  width={40}
+                  height={40}
+                  className="drop-shadow-lg transition-all duration-300 group-hover:drop-shadow-xl w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
                   style={{
                     filter: 'brightness(0) saturate(100%) invert(11%) sepia(89%) saturate(6391%) hue-rotate(22deg) brightness(85%) contrast(130%)'
                   }}
@@ -120,7 +120,7 @@ const Footer = () => {
             </motion.div>
             
             <motion.p 
-              className="text-sand-300 text-sm group-hover:text-sand-100 transition-colors duration-300"
+              className="text-sand-300 text-xs sm:text-sm group-hover:text-sand-100 transition-colors duration-300 max-w-xs sm:max-w-none"
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -136,12 +136,12 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <ul className="flex flex-wrap justify-center gap-8">
+            <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
               {links.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-sand-300 hover:text-sand-100 transition-colors text-sm footer-link"
+                    className="text-sand-300 hover:text-sand-100 transition-colors text-xs sm:text-sm footer-link"
                   >
                     {link.name}
                   </a>
@@ -155,7 +155,7 @@ const Footer = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-sand-400 text-sm"
+            className="text-sand-400 text-xs sm:text-sm"
           >
             © {currentYear} Koten Kitsushi
           </motion.div>
@@ -163,7 +163,7 @@ const Footer = () => {
 
         {/* Séparateur avec symbole animé */}
         <motion.div 
-          className="flex items-center justify-center my-8"
+          className="flex items-center justify-center my-6 sm:my-8"
           initial={{ opacity: 0, width: 0 }}
           whileInView={{ opacity: 1, width: "auto" }}
           viewport={{ once: true }}
@@ -178,7 +178,7 @@ const Footer = () => {
           />
           
           <motion.div
-            className="mx-4 relative"
+            className="mx-2 sm:mx-4 relative"
             animate={prefersReducedMotion || isLowPerfDevice ? {} : {
               rotate: 360
             }}
@@ -205,9 +205,9 @@ const Footer = () => {
             <Image
               src="/img/story/symbole.png"
               alt="Séparateur"
-              width={20}
-              height={20}
-              className="relative z-10 drop-shadow-md"
+              width={16}
+              height={16}
+              className="relative z-10 drop-shadow-md w-4 h-4 sm:w-5 sm:h-5"
               style={{
                 filter: 'brightness(0) saturate(100%) invert(11%) sepia(89%) saturate(6391%) hue-rotate(22deg) brightness(85%) contrast(130%)'
               }}
@@ -225,7 +225,7 @@ const Footer = () => {
 
         {/* Crédits avec animation */}
         <motion.div 
-          className="text-center text-sand-400 text-xs relative z-10"
+          className="text-center text-sand-400 text-xs relative z-10 px-4"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

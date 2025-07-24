@@ -54,13 +54,13 @@ export default function Header() {
       <motion.header
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="fixed top-6 right-6 z-50"
+        className="fixed top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 z-50"
       >
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className={`p-4 rounded-xl shadow-lg flex items-center gap-2 
+          className={`p-2 sm:p-3 md:p-4 rounded-lg sm:rounded-xl shadow-lg flex items-center gap-1 sm:gap-2 
             ${isScrolled || isMenuOpen
               ? 'bg-sand-100/90 dark:bg-rougePerso backdrop-blur-sm'
               : 'bg-sand-200/80 dark:bg-rougePerso backdrop-blur-sm'
@@ -68,25 +68,25 @@ export default function Header() {
             hover:shadow-xl transition-all duration-300 group`}
           aria-label="Menu principal"
         >
-          <span className="text-sand-600 dark:text-sand-100 text-sm font-medium pr-1 opacity-80 group-hover:opacity-100">
+          <span className="text-sand-600 dark:text-sand-100 text-xs sm:text-sm font-medium pr-0.5 sm:pr-1 opacity-80 group-hover:opacity-100">
             Menu
           </span>
           <motion.div
             animate={isMenuOpen ? "open" : "closed"}
-            className="w-5 h-5 relative"
+            className="w-4 h-4 sm:w-5 sm:h-5 relative"
           >
             <motion.span
-              className="absolute w-5 h-0.5 bg-sand-600 dark:bg-sand-200 transform-gpu"
+              className="absolute w-4 sm:w-5 h-0.5 bg-sand-600 dark:bg-sand-200 transform-gpu"
               animate={isMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
               transition={{ duration: 0.2 }}
             />
             <motion.span
-              className="absolute w-5 h-0.5 bg-sand-600 dark:bg-sand-200 top-2 transform-gpu"
+              className="absolute w-4 sm:w-5 h-0.5 bg-sand-600 dark:bg-sand-200 top-1.5 sm:top-2 transform-gpu"
               animate={isMenuOpen ? { opacity: 0 } : { opacity: 1 }}
               transition={{ duration: 0.2 }}
             />
             <motion.span
-              className="absolute w-5 h-0.5 bg-sand-600 dark:bg-sand-200 top-4 transform-gpu"
+              className="absolute w-4 sm:w-5 h-0.5 bg-sand-600 dark:bg-sand-200 top-3 sm:top-4 transform-gpu"
               animate={isMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
               transition={{ duration: 0.2 }}
             />
@@ -101,9 +101,9 @@ export default function Header() {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 z-40 bg-sand-50/95 dark:bg-sand-700/95 backdrop-blur-md flex items-center justify-center"
+            className="fixed inset-0 z-40 bg-sand-50/95 dark:bg-sand-700/95 backdrop-blur-md flex items-center justify-center px-4"
           >
-            <nav className="flex flex-col items-center space-y-8">
+            <nav className="flex flex-col items-center space-y-6 sm:space-y-8 w-full max-w-md">
               {navItems.map((item, i) => (
                 <motion.div
                   key={item.name}
@@ -111,12 +111,13 @@ export default function Header() {
                   custom={i}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
+                  className="w-full text-center"
                 >
                   <Link
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-3xl font-bold text-sand-600 dark:text-sand-200 hover:text-sand-400 
-                             dark:hover:text-sand-300 transition-colors duration-200 relative group"
+                    className="text-xl sm:text-2xl md:text-3xl font-bold text-sand-600 dark:text-sand-200 hover:text-sand-400 
+                             dark:hover:text-sand-300 transition-colors duration-200 relative group block"
                   >
                     {item.name}
                     <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-sand-400 group-hover:w-full transition-all duration-300" />

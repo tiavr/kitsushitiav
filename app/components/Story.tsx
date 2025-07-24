@@ -197,7 +197,7 @@ const StoryCard = memo(
           animate={isCardInView ? "visible" : "hidden"}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="relative h-72 rounded-2xl overflow-hidden cursor-pointer group 
+          className="relative h-64 sm:h-72 md:h-80 rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer group 
                    shadow-lg transition-shadow hover:shadow-xl"
           onClick={() => setIsModalOpen(true)}
         >
@@ -211,11 +211,11 @@ const StoryCard = memo(
             className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20 
                       group-hover:from-black/80 group-hover:to-black/30 transition-colors"
           />
-          <div className="absolute inset-x-0 bottom-0 p-6">
-            <h3 className="text-2xl font-bold text-white text-left">{title}</h3>
+          <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white text-left">{title}</h3>
             <p
-              className="text-sand-200 mt-2 opacity-0 group-hover:opacity-100 
-                      transition-opacity duration-300 text-sm"
+              className="text-sand-200 mt-1 sm:mt-2 opacity-0 group-hover:opacity-100 
+                      transition-opacity duration-300 text-xs sm:text-sm"
             >
               Cliquez pour en savoir plus
             </p>
@@ -413,7 +413,7 @@ const Story = () => {
   return (
     <Section
       ref={sectionRef}
-      className="py-20 relative bg-fondgris"
+      className="py-10 sm:py-16 md:py-20 relative bg-fondgris"
       id="histoire"
     >
       {/* Nuages qui "bugguent" dans cette section */}
@@ -423,31 +423,31 @@ const Story = () => {
       <InfoButton />
 
       <motion.div
-        className="container mx-auto px-6"
+        className="container mx-auto px-4 sm:px-6"
         variants={containerVariants}
         initial="hidden"
         animate={isSectionInView ? "visible" : "hidden"}
       >
-        <motion.div variants={titleVariants} className="text-center mb-12">
-          <h2 className="text-5xl text-rougePerso font-bold">Histoire</h2>
+        <motion.div variants={titleVariants} className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl text-rougePerso font-bold">Histoire</h2>
         </motion.div>
 
         <motion.div
           variants={separatorVariants}
-          className="flex items-center justify-center mb-16"
+          className="flex items-center justify-center mb-10 sm:mb-12 md:mb-16"
         >
-          <div className="h-px bg-sand-600 w-full max-w-[200px]" />
+          <div className="h-px bg-sand-600 w-full max-w-[150px] sm:max-w-[200px]" />
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="mx-4"
+            className="mx-2 sm:mx-4"
           >
             <Image
               src="/img/story/symbole.png"
               alt="Séparateur"
-              width={40}
-              height={40}
-              className="opacity-80 fill-white"
+              width={32}
+              height={32}
+              className="opacity-80 fill-white w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
               style={{
                   filter: 'brightness(0) saturate(100%) invert(11%) sepia(89%) saturate(6391%) hue-rotate(22deg) brightness(85%) contrast(130%)'
               }}
@@ -455,10 +455,10 @@ const Story = () => {
 
             />
           </motion.div>
-          <div className="h-px bg-sand-600 w-full max-w-[200px]" />
+          <div className="h-px bg-sand-600 w-full max-w-[150px] sm:max-w-[200px]" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {stories.map((story, index) => (
             <StoryCard key={story.title} {...story} index={index} />
           ))}

@@ -597,7 +597,7 @@ const Objectif = () => {
     >
       <Section
         ref={sectionRef}
-        className="relative min-h-screen bg-gradient-to-b from-[#C5C4C4] via-[#C5C4C4] to-black py-20 overflow-hidden geist-font"
+        className="relative min-h-screen bg-gradient-to-b from-[#C5C4C4] via-[#C5C4C4] to-black py-10 sm:py-16 md:py-20 overflow-hidden geist-font"
         id="objectifs"
       >
         {/* Nuages qui "bugguent" dans cette section */}
@@ -615,23 +615,23 @@ const Objectif = () => {
         <BackgroundImage side="right" isVisible={isSectionInView} />
 
         <motion.div
-          className="container mx-auto px-6 relative z-20"
+          className="container mx-auto px-4 sm:px-6 relative z-20"
           variants={animations.container}
         >
           <motion.h2
             variants={animations.title}
-            className="text-5xl font-bold text-rougePerso/70 text-center mb-12 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-rougePerso/70 text-center mb-8 sm:mb-10 md:mb-12 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
             style={{ fontFamily: "Edo" }}
           >
             Objectifs
           </motion.h2>
 
-          <div className="flex justify-center mb-16 gap-8">
+          <div className="flex flex-col sm:flex-row justify-center mb-10 sm:mb-12 md:mb-16 gap-4 sm:gap-8">
             {["clan", "personnels"].map((tab, index) => (
               <motion.button
                 key={tab}
                 onClick={() => handleTabChange(tab as "clan" | "personnels")}
-                className={`relative px-8 py-4 rounded-xl text-xl font-bold transition-all duration-500 focus:outline-none overflow-hidden group
+                className={`relative px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl text-base sm:text-lg md:text-xl font-bold transition-all duration-500 focus:outline-none overflow-hidden group
                   ${
                     activeTab === tab
                       ? "bg-gradient-to-br from-rougePerso via-red-800 to-black text-white shadow-[0_0_30px_rgba(146,0,0,0.6),0_0_60px_rgba(146,0,0,0.3)]"
@@ -735,12 +735,12 @@ const Objectif = () => {
             ))}
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 max-w-6xl mx-auto">
             <div className="lg:w-1/3">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="space-y-4 relative"
+                className="space-y-3 sm:space-y-4 relative"
               >
                 {(activeTab === "clan"
                   ? objectifsClan
@@ -757,7 +757,7 @@ const Objectif = () => {
               </motion.div>
             </div>
 
-            <div className="lg:w-2/3">
+            <div className="lg:w-2/3 mt-6 lg:mt-0">
               <AnimatePresence mode="wait">
                 {selectedObjectif && (
                   <motion.div
@@ -770,7 +770,7 @@ const Objectif = () => {
                       ease: "easeOut",
                       scale: { duration: 0.3 }
                     }}
-                    className="relative bg-black/100 backdrop-blur-md rounded-2xl p-8  transition-all duration-300 overflow-hidden group"
+                    className="relative bg-black/100 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 transition-all duration-300 overflow-hidden group"
                     whileHover={{ y: -2 }}
                   >
 

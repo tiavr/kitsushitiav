@@ -197,7 +197,7 @@ export default function Hero() {
       {/* GIF centré au-dessus du titre */}
       <motion.div
         variants={gifVariants}
-        className="absolute top-[5%] inset-x-0 mx-auto flex justify-center items-center z-40"
+        className="absolute top-[3%] sm:top-[5%] inset-x-0 mx-auto flex justify-center items-center z-40 px-4"
         style={{
           y: useTransform(scrollYProgress, [0, 1], ["0%", `${25 * parallaxAmount}%`]),
         }}
@@ -207,13 +207,13 @@ export default function Hero() {
           transition: { duration: 0.3 },
         }}
       >
-        <div className="relative w-[400px] h-[200px]">
+        <div className="relative w-[250px] h-[125px] sm:w-[350px] sm:h-[175px] md:w-[400px] md:h-[200px]">
           <Image
             src="/img/Hero/glitch-logo.gif"
             alt="Glitch Logo Animation"
             fill
             className="object-contain"
-            sizes="(max-width: 768px) 80vw, 400px"
+            sizes="(max-width: 640px) 250px, (max-width: 768px) 350px, 400px"
             priority
             loading="eager"
             fetchPriority="high"
@@ -230,7 +230,7 @@ export default function Hero() {
       {/* Title avec effet de suivi de souris */}
       <motion.div
         variants={titleVariants}
-        className="absolute inset-0 flex items-center justify-center z-30" /* Augmentation du z-index à 30 pour être au premier plan */
+        className="absolute inset-0 flex items-center justify-center z-30 px-4" /* Augmentation du z-index à 30 pour être au premier plan */
         style={{
           x: titleX,
           y: scrollTitleY,
@@ -242,7 +242,7 @@ export default function Hero() {
         }}
       >
         <motion.div
-          className="relative"
+          className="relative w-full max-w-[300px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1000px]"
           style={{
             transformStyle: "preserve-3d",
             perspective: 1000,
@@ -256,8 +256,8 @@ export default function Hero() {
             priority
             loading="eager"
             fetchPriority="high"
-            className="z-10 transition-all duration-300"
-            sizes="(max-width: 768px) 90vw, 1000px"
+            className="z-10 transition-all duration-300 w-full h-auto"
+            sizes="(max-width: 640px) 300px, (max-width: 768px) 500px, (max-width: 1024px) 700px, 1000px"
             quality={shouldReduceMotion ? 80 : 90}
           />
         </motion.div>
@@ -266,7 +266,7 @@ export default function Hero() {
       {/* Character Left */}
       <motion.div
         variants={characterLeftVariants}
-        className="absolute -bottom-20 left-0 w-[750px] h-[950px] z-10" /* z-index reste à 10 pour être en arrière-plan */
+        className="absolute -bottom-10 sm:-bottom-16 md:-bottom-20 left-0 w-[400px] sm:w-[550px] md:w-[650px] lg:w-[750px] h-[500px] sm:h-[700px] md:h-[850px] lg:h-[950px] z-10" /* z-index reste à 10 pour être en arrière-plan */
         style={{
           x: characterX,
           opacity: characterOpacity,
@@ -288,7 +288,7 @@ export default function Hero() {
             alt="Koten Kitsushi Character Left"
             fill
             className="object-contain object-bottom"
-            sizes="(max-width: 768px) 100vw, 850px"
+            sizes="(max-width: 640px) 400px, (max-width: 768px) 550px, (max-width: 1024px) 650px, 750px"
             quality={90}
             style={{
               filter: "drop-shadow(0 0 20px rgba(0,0,0,0.3))",
@@ -304,7 +304,7 @@ export default function Hero() {
       {/* Character Right (Cloned from Left and Mirrored) */}
       <motion.div
         variants={characterRightVariants}
-        className="absolute -bottom-20 right-0 w-[750px] h-[950px] z-10" /* z-index reste à 10 pour être en arrière-plan */
+        className="absolute -bottom-10 sm:-bottom-16 md:-bottom-20 right-0 w-[400px] sm:w-[550px] md:w-[650px] lg:w-[750px] h-[500px] sm:h-[700px] md:h-[850px] lg:h-[950px] z-10" /* z-index reste à 10 pour être en arrière-plan */
         style={{
           // Inverser la direction pour le personnage de droite
           x: rightCharacterTransform,
@@ -327,7 +327,7 @@ export default function Hero() {
             alt="Koten Kitsushi Character Right"
             fill
             className="object-contain object-bottom scale-x-[-1]" // Effet miroir horizontal
-            sizes="(max-width: 768px) 100vw, 850px"
+            sizes="(max-width: 640px) 400px, (max-width: 768px) 550px, (max-width: 1024px) 650px, 750px"
             quality={90}
             style={{
               filter: "drop-shadow(0 0 20px rgba(0,0,0,0.3))",

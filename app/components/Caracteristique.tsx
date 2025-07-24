@@ -495,29 +495,29 @@ const Caracteristique = () => {
   return (
     <Section
       ref={sectionRef}
-      className="py-20 relative bg-[#C5C4C4]"
+      className="py-10 sm:py-16 md:py-20 relative bg-[#C5C4C4]"
       id="caracteristiques"
     >
       {/* Nuages qui "bugguent" dans cette section */}
       <SectionCloud cloudCount={2} />
       
       <motion.div
-        className="container mx-auto px-6"
+        className="container mx-auto px-4 sm:px-6"
         variants={containerVariants}
         initial="hidden"
         animate={isSectionInView ? "visible" : "hidden"}
       >
         <motion.h2
           variants={titleVariants}
-          className="text-5xl text-rougePerso font-bold text-center mb-12"
+          className="text-3xl sm:text-4xl md:text-5xl text-rougePerso font-bold text-center mb-8 sm:mb-10 md:mb-12"
         >
           Caractéristiques
         </motion.h2>
 
-      <div className="flex items-center justify-center mb-16">
+      <div className="flex items-center justify-center mb-10 sm:mb-12 md:mb-16">
   <motion.div
     variants={separatorVariants}
-    className="h-px w-full max-w-[200px]"
+    className="h-px w-full max-w-[150px] sm:max-w-[200px]"
     style={{ backgroundColor: '#920000' }}
   />
   <motion.div
@@ -531,14 +531,14 @@ const Caracteristique = () => {
         delay: 1,
       },
     }}
-    className="mx-4"
+    className="mx-2 sm:mx-4"
   >
     <Image
       src="/img/story/symbole.png"
       alt="Séparateur"
-      width={40}
-      height={40}
-      className="opacity-80"
+      width={32}
+      height={32}
+      className="opacity-80 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
       style={{
         filter: 'brightness(0) saturate(100%) invert(11%) sepia(89%) saturate(6391%) hue-rotate(22deg) brightness(85%) contrast(130%)'
     }}
@@ -546,7 +546,7 @@ const Caracteristique = () => {
   </motion.div>
   <motion.div
     variants={separatorVariants}
-    className="h-px w-full max-w-[200px]"
+    className="h-px w-full max-w-[150px] sm:max-w-[200px]"
     style={{ backgroundColor: '#920000' }}
   />
 </div>
@@ -556,7 +556,7 @@ const Caracteristique = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isSectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-8 sm:mb-10 md:mb-12"
         >
           <div className="relative">
             <Image
@@ -564,7 +564,7 @@ const Caracteristique = () => {
               alt="Akemaru"
               width={300}
               height={400}
-              className="object-contain"
+              className="object-contain w-48 h-64 sm:w-60 sm:h-80 md:w-72 md:h-96 lg:w-[300px] lg:h-[400px]"
               style={{
                 maskImage: 'linear-gradient(to top, transparent 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.3) 20%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.9) 70%, black 100%)',
                 WebkitMaskImage: 'linear-gradient(to top, transparent 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.3) 20%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.9) 70%, black 100%)'
@@ -582,7 +582,7 @@ const Caracteristique = () => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
           {characteristics.map((characteristic, index) => (
             <CharacteristicCard key={index} {...characteristic} index={index} />
           ))}
