@@ -189,7 +189,7 @@ const animations = {
   },
 };
 
-// Styles
+// Styles avec animations spectaculaires
 const styles = {
   backgroundImage: {
     base: "absolute inset-0",
@@ -200,11 +200,23 @@ const styles = {
     },
   },
   button: {
-    base: "w-full text-left p-5 rounded-xl transition-all backdrop-blur-sm focus:outline-none shadow-[0_8px_16px_rgba(0,0,0,0.3),0_4px_8px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.1)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.4),0_6px_12px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.15)] active:shadow-[0_4px_8px_rgba(0,0,0,0.3),0_2px_4px_rgba(0,0,0,0.2),inset_0_2px_4px_rgba(0,0,0,0.2)]",
-    selected:
-      "bg-gradient-to-l from-rougePerso to-black/0 shadow-[0_10px_20px_rgba(146,0,0,0.4),0_6px_12px_rgba(146,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.2)] focus:from-red-900 focus:to-black/20",
-    default:
-      "bg-black/80 text-rougePerso hover:bg-black/90 focus:bg-black/95",
+    base: "w-full text-left p-5 rounded-xl transition-all duration-500 backdrop-blur-sm focus:outline-none relative overflow-hidden group cursor-pointer",
+    selected: {
+      container: "bg-gradient-to-br from-rougePerso via-red-800 to-black relative",
+      overlay: "absolute inset-0 bg-gradient-to-r from-transparent via-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700",
+      glow: "shadow-[0_0_30px_rgba(146,0,0,0.6),0_0_60px_rgba(146,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.3)] group-hover:shadow-[0_0_40px_rgba(146,0,0,0.8),0_0_80px_rgba(146,0,0,0.4),inset_0_2px_0_rgba(255,255,255,0.4)]",
+      text: "text-white font-semibold relative z-10 drop-shadow-lg",
+      particles: "absolute inset-0 opacity-100 transition-opacity duration-1000",
+      morphing: "" // Pas utilisé pour les boutons sélectionnés
+    },
+    default: {
+      container: "bg-gradient-to-br from-gray-900 via-black to-gray-800 border border-red-900/30 relative",
+      overlay: "absolute inset-0 bg-gradient-to-r from-transparent via-rougePerso/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500",
+      glow: "shadow-[0_4px_20px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.1)] group-hover:shadow-[0_8px_30px_rgba(146,0,0,0.4),0_0_20px_rgba(146,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.2)]",
+      text: "text-rougePerso group-hover:text-red-300 font-medium relative z-10 transition-colors duration-300",
+      morphing: "absolute inset-0 bg-gradient-to-r from-rougePerso/0 via-rougePerso/5 to-rougePerso/0 opacity-0 group-hover:opacity-100 transition-all duration-700 transform scale-x-0 group-hover:scale-x-100",
+      particles: "" // Pas utilisé pour les boutons par défaut
+    }
   },
 };
 
@@ -422,65 +434,143 @@ const ObjectifButton = memo(({
   const prefersReducedMotion = useReducedMotion();
   const isLowPerfDevice = useOptimizedAnimations();
   
+  const buttonStyle = isSelected ? styles.button.selected : styles.button.default;
+  
   return (
     <motion.button
       onClick={onClick}
-      className={`${
-        styles.button.base
-      } ${
-        isSelected ? styles.button.selected : styles.button.default
-      } relative overflow-hidden group`}
+      className={`${styles.button.base} ${buttonStyle.container} ${buttonStyle.glow}`}
       variants={animations.button}
       custom={index}
       whileHover={prefersReducedMotion || isLowPerfDevice ? {} : { 
-        scale: 1.02, 
-        x: 8,
-        boxShadow: "0 10px 25px rgba(220, 38, 38, 0.2)"
+        scale: 1.03,
+        y: -2,
+        transition: { duration: 0.3, ease: "easeOut" }
       }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ duration: 0.2 }}
+      whileTap={{ scale: 0.97, transition: { duration: 0.1 } }}
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
     >
-      {/* Dégradé animé de sélection */}
+      {/* Effet de morphing pour les boutons non-sélectionnés */}
+      {!isSelected && (
+        <motion.div
+          className={buttonStyle.morphing}
+          initial={{ scaleX: 0 }}
+          whileHover={{ scaleX: 1 }}
+          transition={{ duration: 0.7, ease: "easeInOut" }}
+        />
+      )}
+      
+      {/* Overlay lumineux */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-l from-rougePerso to-transparent"
-        initial={{ opacity: 0, x: "-100%" }}
-        animate={{
-          opacity: isSelected ? 1 : 0,
-          x: isSelected ? "0%" : "-100%"
-        }}
-        transition={{
-          duration: prefersReducedMotion ? 0.1 : 0.5,
-          ease: "easeOut",
-          opacity: { duration: prefersReducedMotion ? 0.1 : 0.3 }
-        }}
+        className={buttonStyle.overlay}
+        initial={{ opacity: 0 }}
+        whileHover={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
       />
       
-      {/* Overlay d'assombrissement au focus pour les boutons sélectionnés */}
-      {isSelected && (
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-l from-red-900/60 to-black/30 opacity-0 focus-within:opacity-100 transition-opacity duration-200"
+      {/* Particules flottantes pour les boutons sélectionnés */}
+      {isSelected && !prefersReducedMotion && !isLowPerfDevice && (
+        <motion.div 
+          className={buttonStyle.particles}
           initial={{ opacity: 0 }}
-        />
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          {[...Array(8)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1.5 h-1.5 bg-red-400 rounded-full shadow-[0_0_4px_rgba(239,68,68,0.8)]"
+              style={{
+                left: `${15 + i * 10}%`,
+                top: `${25 + (i % 3) * 25}%`,
+              }}
+              animate={{
+                y: [-8, -20, -8],
+                opacity: [0.6, 1, 0.6],
+                scale: [0.8, 1.4, 0.8],
+                rotate: [0, 180, 360]
+              }}
+              transition={{
+                duration: 3 + i * 0.4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.3
+              }}
+            />
+          ))}
+          {/* Particules supplémentaires avec mouvement horizontal */}
+          {[...Array(4)].map((_, i) => (
+            <motion.div
+              key={`horizontal-${i}`}
+              className="absolute w-1 h-1 bg-red-300 rounded-full shadow-[0_0_3px_rgba(252,165,165,0.6)]"
+              style={{
+                left: `${25 + i * 20}%`,
+                top: `${50 + (i % 2) * 20}%`,
+              }}
+              animate={{
+                x: [-3, 3, -3],
+                y: [-5, -12, -5],
+                opacity: [0.4, 0.9, 0.4],
+                scale: [0.6, 1.1, 0.6]
+              }}
+              transition={{
+                duration: 2.5 + i * 0.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.4 + 1
+              }}
+            />
+          ))}
+        </motion.div>
       )}
       
-      {/* Effet de brillance au hover */}
+      {/* Effet de scan lumineux */}
       {!prefersReducedMotion && !isLowPerfDevice && (
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-          initial={{ x: "-100%" }}
-          whileHover={{ x: "100%" }}
-          transition={{ duration: 0.6 }}
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0"
+          whileHover={{
+            opacity: [0, 1, 0],
+            x: ["-100%", "100%"]
+          }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
         />
       )}
       
-
+      {/* Bordure animée pour les boutons sélectionnés */}
+     
       
-      <span 
-        className="font-medium text-base leading-tight relative z-10 group-hover:text-gray-200 group-focus:text-gray-300 transition-colors duration-200"
+      {/* Texte avec effet de glow */}
+      <motion.span 
+        className={`${buttonStyle.text} relative z-20`}
         style={{ fontFamily: "Edo" }}
+        whileHover={{
+          textShadow: isSelected 
+            ? "0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.4)"
+            : "0 0 10px rgba(146,0,0,0.8), 0 0 20px rgba(146,0,0,0.4)"
+        }}
+        transition={{ duration: 0.3 }}
       >
         {title}
-      </span>
+      </motion.span>
+      
+      {/* Effet de pulsation de fond pour les boutons sélectionnés */}
+      {isSelected && !prefersReducedMotion && !isLowPerfDevice && (
+        <motion.div
+          className="absolute inset-0 bg-rougePerso/20 rounded-xl"
+          animate={{
+            scale: [1, 1.05, 1],
+            opacity: [0.2, 0.4, 0.2]
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      )}
     </motion.button>
   );
 });
@@ -537,21 +627,110 @@ const Objectif = () => {
           </motion.h2>
 
           <div className="flex justify-center mb-16 gap-8">
-            {["clan", "personnels"].map((tab) => (
+            {["clan", "personnels"].map((tab, index) => (
               <motion.button
                 key={tab}
                 onClick={() => handleTabChange(tab as "clan" | "personnels")}
-                className={`px-8 py-4 rounded-xl text-xl font-bold transition-all focus:outline-none
+                className={`relative px-8 py-4 rounded-xl text-xl font-bold transition-all duration-500 focus:outline-none overflow-hidden group
                   ${
                     activeTab === tab
-                      ? "bg-rougePerso text-black/70 shadow-lg scale-105"
-                      : "bg-gray-900/70 text-amber-100 hover:bg-gray-800/90 border border-amber-400/30"
+                      ? "bg-gradient-to-br from-rougePerso via-red-800 to-black text-white shadow-[0_0_30px_rgba(146,0,0,0.6),0_0_60px_rgba(146,0,0,0.3)]"
+                      : "bg-gradient-to-br from-gray-900 via-black to-gray-800 text-rougePerso border border-red-900/30 shadow-[0_4px_20px_rgba(0,0,0,0.8)]"
                   }`}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{
+                  scale: 1.05,
+                  y: -2,
+                  boxShadow: activeTab === tab 
+                    ? "0 0 40px rgba(146,0,0,0.8), 0 0 80px rgba(146,0,0,0.4)"
+                    : "0 8px 30px rgba(146,0,0,0.4), 0 0 20px rgba(146,0,0,0.2)"
+                }}
                 whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 style={{ fontFamily: "Edo" }}
               >
-                Objectifs {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                {/* Effet de scan lumineux */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0"
+                  whileHover={{
+                    opacity: [0, 1, 0],
+                    x: ["-100%", "100%"]
+                  }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                />
+                
+                {/* Bordure animée pour le tab actif */}
+           
+                
+                {/* Particules pour le tab actif */}
+                {activeTab === tab && (
+                  <motion.div 
+                    className="absolute inset-0"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {[...Array(6)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="absolute w-1.5 h-1.5 bg-red-400 rounded-full shadow-[0_0_4px_rgba(239,68,68,0.8)]"
+                        style={{
+                          left: `${20 + i * 12}%`,
+                          top: `${35 + (i % 2) * 30}%`,
+                        }}
+                        animate={{
+                          y: [-5, -12, -5],
+                          opacity: [0.6, 1, 0.6],
+                          scale: [0.8, 1.3, 0.8],
+                          rotate: [0, 180, 360]
+                        }}
+                        transition={{
+                          duration: 2.5 + i * 0.3,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: i * 0.4
+                        }}
+                      />
+                    ))}
+                    {/* Particules secondaires avec mouvement orbital */}
+                    {[...Array(3)].map((_, i) => (
+                      <motion.div
+                        key={`orbital-${i}`}
+                        className="absolute w-1 h-1 bg-red-300 rounded-full shadow-[0_0_3px_rgba(252,165,165,0.6)]"
+                        style={{
+                          left: `${30 + i * 20}%`,
+                          top: `${50}%`,
+                        }}
+                        animate={{
+                          x: [0, 8, 0, -8, 0],
+                          y: [-4, -10, -4],
+                          opacity: [0.5, 0.9, 0.5],
+                          scale: [0.6, 1.1, 0.6]
+                        }}
+                        transition={{
+                          duration: 3 + i * 0.5,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: i * 0.5 + 0.8
+                        }}
+                      />
+                    ))}
+                  </motion.div>
+                )}
+                
+                {/* Texte avec glow */}
+                <motion.span
+                  className="relative z-10"
+                  whileHover={{
+                    textShadow: activeTab === tab
+                      ? "0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.4)"
+                      : "0 0 10px rgba(146,0,0,0.8), 0 0 20px rgba(146,0,0,0.4)"
+                  }}
+                >
+                  Objectifs {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                </motion.span>
               </motion.button>
             ))}
           </div>
@@ -591,8 +770,8 @@ const Objectif = () => {
                       ease: "easeOut",
                       scale: { duration: 0.3 }
                     }}
-                    className="relative bg-gradient-to-br from-gray-900/95 via-gray-800/90 to-black/95 backdrop-blur-md rounded-2xl p-8 border border-rougePerso/30 shadow-[0_20px_40px_rgba(0,0,0,0.4),0_10px_20px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.1)] hover:shadow-[0_25px_50px_rgba(146,0,0,0.3),0_15px_25px_rgba(0,0,0,0.4),inset_0_1px_3px_rgba(255,255,255,0.15)] transition-all duration-300 overflow-hidden group"
-                    whileHover={{ y: -2, scale: 1.01 }}
+                    className="relative bg-black/100 backdrop-blur-md rounded-2xl p-8  transition-all duration-300 overflow-hidden group"
+                    whileHover={{ y: -2 }}
                   >
 
                     
@@ -610,7 +789,7 @@ const Objectif = () => {
                     
                     {/* Effet de glow au hover */}
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-rougePerso/10 via-transparent to-blue-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      className="absolute inset-0 bg-gradient-to-br from-rougePerso/10 via-transparent to-black/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     />
                   </motion.div>
                 )}

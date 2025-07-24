@@ -551,6 +551,37 @@ const Caracteristique = () => {
   />
 </div>
 
+        {/* Image d'Akemaru avec effet de transparence */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isSectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+          className="flex justify-center mb-12"
+        >
+          <div className="relative">
+            <Image
+              src="/img/caractéristiques/akemaru.png"
+              alt="Akemaru"
+              width={300}
+              height={400}
+              className="object-contain"
+              style={{
+                maskImage: 'linear-gradient(to top, transparent 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.3) 20%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.9) 70%, black 100%)',
+                WebkitMaskImage: 'linear-gradient(to top, transparent 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.3) 20%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.9) 70%, black 100%)'
+              }}
+            />
+            {/* Effet de glow subtil */}
+            <div 
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: 'radial-gradient(ellipse at center, rgba(146, 0, 0, 0.1) 0%, transparent 70%)',
+                maskImage: 'linear-gradient(to top, transparent 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.3) 20%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.9) 70%, black 100%)',
+                WebkitMaskImage: 'linear-gradient(to top, transparent 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.3) 20%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.9) 70%, black 100%)'
+              }}
+            />
+          </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {characteristics.map((characteristic, index) => (
             <CharacteristicCard key={index} {...characteristic} index={index} />
