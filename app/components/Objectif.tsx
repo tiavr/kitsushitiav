@@ -45,9 +45,9 @@ const objectifsClan: ObjectifData[] = [
 
 const objectifsPersonnels: ObjectifData[] = [
   {
-    title: "Dépasser ses limites",
+    title: "Evenement de traque",
     content:
-      "Okami continuera son entrainement afin d'améliorer ses capacités physiques en s'entrainant avec Shiromaru ainsi que les membres de sa famille. Son but est de montrer aux autres ninjas qu'il est digne de porter le nom Inuzuka malgré ses défauts. Il se dépassera et deviendra un ninja reconnu et redouté dans le monde ninja.",
+      "Okami mettra en place un évenement au sein du village de Konoha consistant à rassembler quelques membre du clan Inuzuka ainsi que tous les ninjas de Konoha afin de participer à un jeu de chasse à l'homme. Les Inuzuka devront utiliser leur flair et leur talent d'éclaireur et de chasseur afin de traquet les différents ninjas de Konoha dans une zone précise. Les survivants seront récompensés. Cela mettra à l'épreuve les capacités de survie des ninjas de Konoha, et entrainera le flair des Inuzuka.",
   },
   {
     title: "Renforcer son lien avec son compagnon canin",
