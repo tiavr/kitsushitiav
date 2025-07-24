@@ -94,7 +94,7 @@ const Quisuije = () => {
       >
         <motion.h2
           variants={titleVariants}
-          className="text-3xl sm:text-4xl md:text-5xl text-amber-400 font-bold text-center mb-8 sm:mb-10 md:mb-12 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
+          className="text-3xl sm:text-4xl md:text-5xl text-rougePerso font-bold text-center mb-8 sm:mb-10 md:mb-12 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
         >
           Qui suis-je ?
         </motion.h2>
