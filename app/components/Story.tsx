@@ -2,7 +2,13 @@
 
 import { useState, useRef, useEffect, memo } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { Section } from "../components/Section";
 import { useInView } from "../hooks/useInView";
 import SectionCloud from "./AnimatedCloud";
@@ -49,20 +55,20 @@ const Modal = ({
   onClose: () => void;
 }) => {
   const prefersReducedMotion = useReducedMotion();
-  
+
   useEffect(() => {
     const originalStyle = window.getComputedStyle(document.body).overflow;
     document.body.style.overflow = "hidden";
-    
+
     // Gestion des touches clavier
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         onClose();
       }
     };
-    
+
     document.addEventListener("keydown", handleKeyDown);
-    
+
     return () => {
       document.body.style.overflow = originalStyle;
       document.removeEventListener("keydown", handleKeyDown);
@@ -71,46 +77,46 @@ const Modal = ({
 
   const modalVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
       transition: {
         duration: prefersReducedMotion ? 0.1 : 0.3,
-        ease: "easeOut"
-      }
+        ease: "easeOut",
+      },
     },
-    exit: { 
+    exit: {
       opacity: 0,
       transition: {
-        duration: prefersReducedMotion ? 0.1 : 0.2
-      }
-    }
+        duration: prefersReducedMotion ? 0.1 : 0.2,
+      },
+    },
   };
 
   const contentVariants = {
-    hidden: { 
-      scale: prefersReducedMotion ? 1 : 0.8, 
+    hidden: {
+      scale: prefersReducedMotion ? 1 : 0.8,
       opacity: 0,
-      y: prefersReducedMotion ? 0 : 50
+      y: prefersReducedMotion ? 0 : 50,
     },
-    visible: { 
-      scale: 1, 
+    visible: {
+      scale: 1,
       opacity: 1,
       y: 0,
       transition: {
         type: prefersReducedMotion ? "tween" : "spring",
         stiffness: 300,
         damping: 30,
-        duration: prefersReducedMotion ? 0.1 : 0.4
-      }
+        duration: prefersReducedMotion ? 0.1 : 0.4,
+      },
     },
-    exit: { 
-      scale: prefersReducedMotion ? 1 : 0.8, 
+    exit: {
+      scale: prefersReducedMotion ? 1 : 0.8,
       opacity: 0,
       y: prefersReducedMotion ? 0 : -50,
       transition: {
-        duration: prefersReducedMotion ? 0.1 : 0.3
-      }
-    }
+        duration: prefersReducedMotion ? 0.1 : 0.3,
+      },
+    },
   };
 
   return (
@@ -212,7 +218,9 @@ const StoryCard = memo(
                       group-hover:from-black/80 group-hover:to-black/30 transition-colors"
           />
           <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white text-left">{title}</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white text-left">
+              {title}
+            </h3>
             <p
               className="text-sand-200 mt-1 sm:mt-2 opacity-0 group-hover:opacity-100 
                       transition-opacity duration-300 text-xs sm:text-sm"
@@ -241,15 +249,17 @@ StoryCard.displayName = "StoryCard";
 // Hook pour optimiser les animations sur appareils faibles performances
 const useOptimizedAnimations = () => {
   const [isLowPerfDevice, setIsLowPerfDevice] = useState(false);
-  
+
   useEffect(() => {
-    const isLowEnd = 
-      navigator.hardwareConcurrency <= 4 || 
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
+    const isLowEnd =
+      navigator.hardwareConcurrency <= 4 ||
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+
     setIsLowPerfDevice(isLowEnd);
   }, []);
-  
+
   return isLowPerfDevice;
 };
 
@@ -258,7 +268,7 @@ const InfoButton = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const prefersReducedMotion = useReducedMotion();
   const isLowPerfDevice = useOptimizedAnimations();
-  
+
   // Animation basée sur le scroll
   const { scrollY } = useScroll();
   const buttonScale = useTransform(scrollY, [0, 300], [1, 0.8]);
@@ -266,41 +276,44 @@ const InfoButton = () => {
 
   const buttonVariants = {
     initial: { opacity: 0, scale: 0.8, rotate: -10 },
-    animate: { 
-      opacity: 1, 
-      scale: 1, 
+    animate: {
+      opacity: 1,
+      scale: 1,
       rotate: 0,
       transition: {
         type: "spring",
         stiffness: 260,
-        damping: 20
-      }
+        damping: 20,
+      },
     },
-    hover: { 
+    hover: {
       scale: prefersReducedMotion || isLowPerfDevice ? 1 : 1.15,
       rotate: prefersReducedMotion || isLowPerfDevice ? 0 : 8,
-      transition: { duration: 0.2 }
+      transition: { duration: 0.2 },
     },
     tap: { scale: 0.95 },
   };
 
   // Animation améliorée de l'icône avec effet de pulsation et rotation
   const iconVariants = {
-    animate: prefersReducedMotion || isLowPerfDevice ? {} : {
-      scale: [1, 1.3, 1],
-      rotate: [0, 8, -8, 0],
-      filter: [
-        "drop-shadow(0 0 0px rgba(220, 38, 38, 0.5))",
-        "drop-shadow(0 0 25px rgba(220, 38, 38, 0.9))",
-        "drop-shadow(0 0 0px rgba(220, 38, 38, 0.5))"
-      ],
-      transition: {
-        duration: 2.5,
-        repeat: Infinity,
-        ease: "easeInOut",
-        times: [0, 0.5, 1]
-      },
-    },
+    animate:
+      prefersReducedMotion || isLowPerfDevice
+        ? {}
+        : {
+            scale: [1, 1.3, 1],
+            rotate: [0, 8, -8, 0],
+            filter: [
+              "drop-shadow(0 0 0px rgba(220, 38, 38, 0.5))",
+              "drop-shadow(0 0 25px rgba(220, 38, 38, 0.9))",
+              "drop-shadow(0 0 0px rgba(220, 38, 38, 0.5))",
+            ],
+            transition: {
+              duration: 2.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              times: [0, 0.5, 1],
+            },
+          },
   };
 
   return (
@@ -314,7 +327,7 @@ const InfoButton = () => {
         whileTap="tap"
         style={{
           scale: prefersReducedMotion || isLowPerfDevice ? 1 : buttonScale,
-          opacity: prefersReducedMotion || isLowPerfDevice ? 1 : buttonOpacity
+          opacity: prefersReducedMotion || isLowPerfDevice ? 1 : buttonOpacity,
         }}
         transition={{ delay: 0.3, duration: 0.5 }}
         className="absolute top-6 left-6 z-10 bg-rougePerso p-5 rounded-full 
@@ -332,9 +345,9 @@ const InfoButton = () => {
           whileHover={{ x: "100%" }}
           transition={{ duration: 0.6 }}
         />
-        
-        <motion.div 
-          variants={iconVariants} 
+
+        <motion.div
+          variants={iconVariants}
           animate={prefersReducedMotion || isLowPerfDevice ? "" : "animate"}
           className="relative z-10"
         >
@@ -418,29 +431,23 @@ const Story = () => {
     >
       {/* Nuages qui "bugguent" dans cette section */}
       <SectionCloud cloudCount={2} />
-      
+
       {/* Aucune transition visible entre les sections */}
       <InfoButton />
 
       <motion.div
-<<<<<<< HEAD
-        className="container mx-auto px-6 relative z-10"
-=======
         className="container mx-auto px-4 sm:px-6"
->>>>>>> 0c2cd38b9e1d4f42f8a9896c890df9e94093720e
         variants={containerVariants}
         initial="hidden"
         animate={isSectionInView ? "visible" : "hidden"}
       >
-<<<<<<< HEAD
-        {/* Fond gris similaire au Hero */}
-        <div className="absolute inset-0 pointer-events-none bg-hero -z-10"></div>
-        <motion.div variants={titleVariants} className="text-center mb-12">
-          <h2 className="text-5xl text-rougePerso font-bold">Histoire</h2>
-=======
-        <motion.div variants={titleVariants} className="text-center mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl text-rougePerso font-bold">Histoire</h2>
->>>>>>> 0c2cd38b9e1d4f42f8a9896c890df9e94093720e
+        <motion.div
+          variants={titleVariants}
+          className="text-center mb-8 sm:mb-10 md:mb-12"
+        >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl text-rougePerso font-bold">
+            Histoire
+          </h2>
         </motion.div>
 
         <motion.div
@@ -460,10 +467,9 @@ const Story = () => {
               height={32}
               className="opacity-80 fill-white w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
               style={{
-                  filter: 'brightness(0) saturate(100%) invert(11%) sepia(89%) saturate(6391%) hue-rotate(22deg) brightness(85%) contrast(130%)'
+                filter:
+                  "brightness(0) saturate(100%) invert(11%) sepia(89%) saturate(6391%) hue-rotate(22deg) brightness(85%) contrast(130%)",
               }}
-              
-
             />
           </motion.div>
           <div className="h-px bg-sand-600 w-full max-w-[150px] sm:max-w-[200px]" />

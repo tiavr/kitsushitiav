@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tiavv-Kitsushi",
-  description: "Découvrez l'histoire de Koren, ninja de Kusa",
+  title: "Tiavv-Inuzuka",
+  description: "Découvrez l'histoire de Okami Inuzuka, ninja de Konoha",
 };
 
 export default function RootLayout({

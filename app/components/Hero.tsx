@@ -15,16 +15,18 @@ import { useInView } from "../hooks/useInView";
 // Hook pour optimiser les animations sur les appareils à faible performance
 const useOptimizedAnimations = () => {
   const [isLowPerfDevice, setIsLowPerfDevice] = useState(false);
-  
+
   useEffect(() => {
     // Détection simple des appareils à faible performance
-    const isLowEnd = 
-      navigator.hardwareConcurrency <= 4 || 
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
+    const isLowEnd =
+      navigator.hardwareConcurrency <= 4 ||
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+
     setIsLowPerfDevice(isLowEnd);
   }, []);
-  
+
   return isLowPerfDevice;
 };
 
@@ -34,14 +36,14 @@ export default function Hero() {
   const mouseY = useMotionValue(0);
   const prefersReducedMotion = useReducedMotion();
   const isLowPerfDevice = useOptimizedAnimations();
-  
+
   // Réduire la complexité des animations si nécessaire
   const shouldReduceMotion = prefersReducedMotion || isLowPerfDevice;
-  
-  const springConfig = shouldReduceMotion 
+
+  const springConfig = shouldReduceMotion
     ? { damping: 50, stiffness: 200 } // Configuration plus légère
     : { damping: 25, stiffness: 100 };
-    
+
   const titleX = useSpring(mouseX, springConfig);
 
   useEffect(() => {
@@ -51,7 +53,7 @@ export default function Hero() {
       mouseY.set(0);
       return;
     }
-    
+
     const handleMouseMove = (e: MouseEvent) => {
       // Throttle pour limiter les mises à jour
       if (!window.requestAnimationFrame) {
@@ -61,7 +63,7 @@ export default function Hero() {
         mouseY.set(yOffset);
         return;
       }
-      
+
       window.requestAnimationFrame(() => {
         const xOffset = (e.clientX - window.innerWidth / 2) * 0.02;
         const yOffset = (e.clientY - window.innerHeight / 2) * 0.02;
@@ -87,12 +89,28 @@ export default function Hero() {
 
   // Réduire l'amplitude des animations parallaxes si nécessaire
   const parallaxAmount = shouldReduceMotion ? 0.5 : 1;
-  
-  const parallaxY = useTransform(scrollYProgress, [0, 1], ["0%", `${15 * parallaxAmount}%`]);
+
+  const parallaxY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", `${15 * parallaxAmount}%`]
+  );
   const opacity = 1;
-  const scrollTitleY = useTransform(scrollYProgress, [0, 1], ["0%", `${35 * parallaxAmount}%`]);
-  const characterX = useTransform(scrollYProgress, [0, 1], ["0%", `${-25 * parallaxAmount}%`]);
-  const characterOpacity = useTransform(scrollYProgress, [0, 0.8], [1, shouldReduceMotion ? 0.5 : 0.3]);
+  const scrollTitleY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", `${35 * parallaxAmount}%`]
+  );
+  const characterX = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", `${-25 * parallaxAmount}%`]
+  );
+  const characterOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.8],
+    [1, shouldReduceMotion ? 0.5 : 0.3]
+  );
 
   // Particules supprimées
 
@@ -156,23 +174,26 @@ export default function Hero() {
   };
 
   // Variants pour l'animation du GIF avec optimisation
-  const gifVariants = useMemo(() => ({
-    hidden: { y: shouldReduceMotion ? -20 : -50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: shouldReduceMotion ? 0.8 : 1.2,
-        ease: "easeOut",
-        delay: shouldReduceMotion ? 0.1 : 0.3
+  const gifVariants = useMemo(
+    () => ({
+      hidden: { y: shouldReduceMotion ? -20 : -50, opacity: 0 },
+      visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+          duration: shouldReduceMotion ? 0.8 : 1.2,
+          ease: "easeOut",
+          delay: shouldReduceMotion ? 0.1 : 0.3,
+        },
       },
-    },
-  }), [shouldReduceMotion]);
+    }),
+    [shouldReduceMotion]
+  );
 
   // Création de la transformation pour le personnage de droite
   const rightCharacterTransform = useTransform(
-    scrollYProgress, 
-    [0, 1], 
+    scrollYProgress,
+    [0, 1],
     ["0%", `${25 * parallaxAmount}%`]
   );
 
@@ -191,62 +212,28 @@ export default function Hero() {
         variants={backgroundVariants}
         style={{ y: parallaxY }}
         className="absolute inset-0 bg-[#C5C4C4]"
-      >
-<<<<<<< HEAD
-        <Image
-          src="/img/test-inu.png"
-          alt="Village de Kusa"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-          quality={90}
-        />
-      </motion.div>
-
-      {/* Particules flottantes */}
-      <div className="absolute inset-0 pointer-events-none ">
-        {particles.map((particle) => (
-          <motion.div
-            key={particle.id}
-            className="absolute rounded-full bg-white/20 backdrop-blur-sm"
-            style={{
-              width: `${particle.size}px`,
-              height: `${particle.size}px`,
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              x: [0, 15, 0],
-              opacity: [0.4, 0.8, 0.4],
-            }}
-            transition={{
-              duration: particle.duration,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Effet de lumière ambiante */}
-=======
-      </motion.div>
+      ></motion.div>
 
       {/* GIF centré au-dessus du titre */}
->>>>>>> 0c2cd38b9e1d4f42f8a9896c890df9e94093720e
       <motion.div
         variants={gifVariants}
         className="absolute top-[3%] sm:top-[5%] inset-x-0 mx-auto flex justify-center items-center z-30 px-4"
         style={{
-          y: useTransform(scrollYProgress, [0, 1], ["0%", `${25 * parallaxAmount}%`]),
+          y: useTransform(
+            scrollYProgress,
+            [0, 1],
+            ["0%", `${25 * parallaxAmount}%`]
+          ),
         }}
-        whileHover={shouldReduceMotion ? {} : {
-          scale: 1.05,
-          filter: "brightness(1.1)",
-          transition: { duration: 0.3 },
-        }}
+        whileHover={
+          shouldReduceMotion
+            ? {}
+            : {
+                scale: 1.05,
+                filter: "brightness(1.1)",
+                transition: { duration: 0.3 },
+              }
+        }
       >
         <div className="relative w-[250px] h-[125px] sm:w-[350px] sm:h-[175px] md:w-[400px] md:h-[200px]">
           <Image
@@ -276,11 +263,15 @@ export default function Hero() {
           x: titleX,
           y: scrollTitleY,
         }}
-        whileHover={shouldReduceMotion ? {} : {
-          scale: 1.02,
-          filter: "brightness(1.1)",
-          transition: { duration: 0.3 },
-        }}
+        whileHover={
+          shouldReduceMotion
+            ? {}
+            : {
+                scale: 1.02,
+                filter: "brightness(1.1)",
+                transition: { duration: 0.3 },
+              }
+        }
       >
         <motion.div
           className="relative w-full max-w-[300px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1000px]"
@@ -341,7 +332,7 @@ export default function Hero() {
           />
         </div>
       </motion.div>
-      
+
       {/* Character Right (Cloned from Left and Mirrored) */}
       <motion.div
         variants={characterRightVariants}

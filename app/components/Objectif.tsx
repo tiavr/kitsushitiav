@@ -16,35 +16,30 @@ interface ObjectifData {
 // Constants
 const objectifsClan: ObjectifData[] = [
   {
-    title: "Rechercher les terres de ses ancêtres",
+    title: "Mettre en place un rituel au sein du clan",
     content:
-      "Koten cherchera à se renseigner sur ses ancêtres et les terres qu'ils ont habité avant de venir à Kusa. Il souhaiterait en savoir plus sur l'histoire de son clan qui ne contient que très peu de récits. Il pense que les anciennes sculptures laissées par ses ancêtres lui permettront de mieux comprendre ses origines.",
+      "Okami cherchera à mettre en place un rituel au sein du clan : La chasse en meute. Le but principal de ce rituel est d'aiguiser leurs talents de chasseur mais également de renforcer la cohésion au sein de la meute. Chaque année, les membres du clan Inuzuka devront se rassembler afin de partir en chasse, les proies peuvent être du gibier mais également des ninjas, ce rituel peut également s'instaurer dans le cadre d'un mercenariat.",
   },
   {
     title: "Apprendre les moeurs et tradition du clan",
     content:
-      "Koten suivra l'éducation de son père afin d'apprendre toutes les traditions et héritages du clan. Le but étant de faire perpétuer ces valeurs aux prochaines générations du clan.",
+      "Okami suivra l'éducation de ses ainés afin d'apprendre toutes les traditions et héritages du clan. Le but étant de faire perpétuer ces valeurs aux prochaines générations du clan.",
   },
   {
-    title: "Corpus secret",
+    title: "Rallier un clan mineur ou une famille au service du clan",
     content:
-      "Koten souhaitera garder des traces écrites de l'histoire du clan Kitsushi tel qu'il le connait. Suite à cette amnésie et cette perte d'identité temporaire que ses ancêtres ont subit, il juge nécessaire d'archiver dans un document secret l'histoire de son clan. Ce corpus pourrait être illustré de sculptures.",
-  },
-  {
-    title: "Dojo Kitsushi",
-    content:
-      "Le dojo Kitsushi accueillera les ninjas souhaitant apprendre l'art du sculpteur. Il aimerait mettre en avant et populariser cet art auprès des personnes qui ne sont pas familier des capacités du clan Kitsushi. Cela permettra de populariser le clan au sein du village qui les a accueilli et leur faire gagner en notoriété.",
+      "Okami est conscient de l’importance de la politique au sein du village. Pour affirmer sa position, il sait qu’il lui faut des alliés loyaux. Il cherchera donc à rallier un clan mineur partageant des intérêts communs. L’objectif sera de placer progressivement les membres de ce clan à des postes plus ou moins influents dans le village, afin de garder un certain contrôle et d’orienter l’opinion publique en sa faveur.",
   },
 
   {
     title: "Relations entre les clans",
     content:
-      "Koten fera en sorte d'étudier les relations entre les clans suite à l'unification des villages. Le but final est d'unifier les clans du village et de garantir une cohésion entre ceux-ci. Cela se fera en étudiant les liens entre les différents clans car ils sont les piliers du village. En organisant des réunions, en débattant, en exposant nos points de vue. Pour Koten, un village se doit d'être uni s'il veut être fort.",
+      "Okami fera en sorte d'étudier les relations entre les clans suite au sein de Konoha. Le but final est d'unifier les clans du village et de garantir une cohésion entre ceux-ci. Cela se fera en étudiant les liens entre les différents clans car ils sont les piliers du village. En organisant des réunions, en débattant, en exposant nos points de vue. Pour Okami, un village se doit d'être uni s'il veut être fort.",
   },
   {
     title: "Affirmer sa position",
     content:
-      "Par le passé, le clan Kitsushi n'héritèrent jamais de grandes responsabilités. Suite à l'unification des villages. Koten souhaite en profiter pour changer les choses. Il souhaite faire prospérer le clan et protéger les intérets de ce dernier. Il souhaite affirmer la position du clan et le placer comme étant un pilier non seulement militaire mais également politique. Il motivera les membres du clan à l'accompagner dans cette quête d'occuper des postes à fortes responsabilités.",
+      "Suite à la mise en surface du clan au sein de Konoha, Okami à pour but de rendre le clan attrayant et indispensable au sein du village. Il souhaite faire prospérer le clan et protéger les intérets de ce dernier. Il souhaite affirmer la position du clan et le placer comme étant un pilier non seulement militaire mais également politique. Il motivera les membres du clan à l'accompagner dans cette quête d'occuper des postes à fortes responsabilités.",
   },
 ];
 
@@ -52,32 +47,27 @@ const objectifsPersonnels: ObjectifData[] = [
   {
     title: "Dépasser ses limites",
     content:
-      "Koten continuera  son entrainement afin d'améliorer ses capacités physiques en s'entrainant avec son serviteur et les membres de sa famille. Son but est de montrer aux autres ninjas qu'il est digne de porter le nom Kitsushi malgré ses défauts. Il se dépassera et deviendra un ninja reconnu et redouté dans le monde ninja.",
+      "Okami continuera son entrainement afin d'améliorer ses capacités physiques en s'entrainant avec Shiromaru ainsi que les membres de sa famille. Son but est de montrer aux autres ninjas qu'il est digne de porter le nom Inuzuka malgré ses défauts. Il se dépassera et deviendra un ninja reconnu et redouté dans le monde ninja.",
   },
   {
-    title: "Renforcer son lien avec son serviteur",
+    title: "Renforcer son lien avec son compagnon canin",
     content:
-      "Koten souhaite réellement établir un lien fort avec son serviteur. Il souhaite que sa relation avec lui ne soit pas uniquément lié à ces statuts maitre/serviteur. Il a besoin d'un second pouvant l'épauler et le conseiller dans ses projets. Il aimerait que ce serviteur puisse occuper un poste important au sein du village.",
+      "Okami souhaite réellement entretenir un lien fort avec son chien. Il souhaite que sa relation avec lui ne soit pas uniquément lié à ce statut de maitre/chien, il voit ça plutôt comme une amitié, une fraternité. Il a besoin d'un second pouvant l'épauler et le soutenir dans sa vie de ninja projets.",
   },
   {
-    title: "Maîtriser le Fuinjutsu",
+    title: "Rejoindre la Stratégie militaire",
     content:
-      "Koten tâchera de trouver un maitre afin d'apprendre le fuinjutsu. Cette technique lui permettra de sceller les secrets du clan, ils lui serviront aussi pour son projet à la section policière.",
+      "Okami fera en sorte de rejoindre la stratégie militaire le plus rapidement possible. Cela lui permet d'être au coeur de nombreux évenements militaire au sein du village ce qui lui permettra de mettre en avant son art oratoire et ses capacités à diriger les ninjas sur le terrain, comme s'il dirigeait une meute. Le but secondaire est de prendre la tête de cette section et montrer que les Inuzuka peuvent hériter de grandes responsabilités.",
   },
   {
-    title: "Rejoindre la Seido",
+    title: "Devenir une figure de KONOHAGAKURE",
     content:
-      "Koten fera en sorte de rejoindre la Seido le plus rapidement possible. La Seido lui permet d'être au coeur de nombreux évenements au sein du village ce qui lui permettra de récolter beaucoup d'informations qui lui serviront à l'avenir, des informations qu'il pourrait potentillement manipuler. Le but secondaire est de prendre la tête de cette section et montrer que les Kitsushi peuvent hériter de grandes responsabilités.",
+      "Pour devenir un figure de Konoha, Okami sait qu'il doit réaliser des exploits qui vont au-delà des frontières de son clan. En prenant part à des missions importantes pour le village, il démontre sa valeur en tant que combattant, stratège et diplomate. Okami collaborera avec d'autres clans et créera des ponts et des alliances. Des événements culturels, tel qu'une démonstration de capacités par son clan (également les autres clans) sous forme d'art, démontrant que sa richesse culturelle est également présente. Sa sérénité, sa sagesse et sa persévérance rendront les ninjas admiratifs de sa personne, renforçant sa position de personnage emblématique de Konoha.",
   },
   {
-    title: "Révolutionner les lois et sanctions de la Seido",
+    title: "Protecteur de la forêt",
     content:
-      "Le système et les lois d'un village peuvent changer au fur et à mesure de l'évolution de ses habitants. Koten souhaite donc effectuer de la recherche, et partir en reconnaissance dans les autres pays afin d'étudier leur section policière et leur système de loi. Il pense qu'il pourrait potentiellement s'inspirer afin d'améliorer le système de Kusa et garantir la sécurité et la perennité du village. L'une des raisons principales de l'apprentissage du Fuinjutsu pour Koten, est d'intégrer cette pratique dans les sanctions du village. Pour Koten, ce genre de sanctions peut-être bénéfique pour empecher le recidivisme et montrer le bon exemple. Bien evidemment, ces sanctions seront adaptés aux infractions commises. Comme vous pouvez le comprendre, le fuinjutsu permettra de placer différents types de sceaux sur l'individu en fonction de la nature de sa sanction.",
-  },
-  {
-    title: "Protecteur du Pays de l'Herbe",
-    content:
-      "Koten souhaite atteindre un statut important au sein de Kusa, non seulement, pour casser la chaine sur la mise à l'écart du clan Kitsushi dans le passé mais également pour pouvoir protéger les hautes instances du pays afin d'assurer la perénnité du Pays et montrer son dévouement et sa loyauté au village ayant accepté de les accueillir suite aux évènements.",
+      "Okami est bien décidé a rendre à la Mère nature se qu’elle lui a donné. De ce fait, Okami veut à tout prix préserver la Forêt, lui donnant droit et respect. Pour cela, Satoshi compte porter la voix des animaux et de la forêt au sein du Commandement de Konoha pour faire entendre ses besoins.",
   },
 ];
 
@@ -202,36 +192,44 @@ const styles = {
   button: {
     base: "w-full text-left p-5 rounded-xl transition-all duration-500 backdrop-blur-sm focus:outline-none relative overflow-hidden group cursor-pointer",
     selected: {
-      container: "bg-gradient-to-br from-rougePerso via-red-800 to-black relative",
-      overlay: "absolute inset-0 bg-gradient-to-r from-transparent via-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700",
+      container:
+        "bg-gradient-to-br from-rougePerso via-red-800 to-black relative",
+      overlay:
+        "absolute inset-0 bg-gradient-to-r from-transparent via-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700",
       glow: "shadow-[0_0_30px_rgba(146,0,0,0.6),0_0_60px_rgba(146,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.3)] group-hover:shadow-[0_0_40px_rgba(146,0,0,0.8),0_0_80px_rgba(146,0,0,0.4),inset_0_2px_0_rgba(255,255,255,0.4)]",
       text: "text-white font-semibold relative z-10 drop-shadow-lg",
-      particles: "absolute inset-0 opacity-100 transition-opacity duration-1000",
-      morphing: "" // Pas utilisé pour les boutons sélectionnés
+      particles:
+        "absolute inset-0 opacity-100 transition-opacity duration-1000",
+      morphing: "", // Pas utilisé pour les boutons sélectionnés
     },
     default: {
-      container: "bg-gradient-to-br from-gray-900 via-black to-gray-800 border border-red-900/30 relative",
-      overlay: "absolute inset-0 bg-gradient-to-r from-transparent via-rougePerso/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500",
+      container:
+        "bg-gradient-to-br from-gray-900 via-black to-gray-800 border border-red-900/30 relative",
+      overlay:
+        "absolute inset-0 bg-gradient-to-r from-transparent via-rougePerso/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500",
       glow: "shadow-[0_4px_20px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.1)] group-hover:shadow-[0_8px_30px_rgba(146,0,0,0.4),0_0_20px_rgba(146,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.2)]",
       text: "text-rougePerso group-hover:text-red-300 font-medium relative z-10 transition-colors duration-300",
-      morphing: "absolute inset-0 bg-gradient-to-r from-rougePerso/0 via-rougePerso/5 to-rougePerso/0 opacity-0 group-hover:opacity-100 transition-all duration-700 transform scale-x-0 group-hover:scale-x-100",
-      particles: "" // Pas utilisé pour les boutons par défaut
-    }
+      morphing:
+        "absolute inset-0 bg-gradient-to-r from-rougePerso/0 via-rougePerso/5 to-rougePerso/0 opacity-0 group-hover:opacity-100 transition-all duration-700 transform scale-x-0 group-hover:scale-x-100",
+      particles: "", // Pas utilisé pour les boutons par défaut
+    },
   },
 };
 
 // Hook pour optimiser les animations
 const useOptimizedAnimations = () => {
   const [isLowPerfDevice, setIsLowPerfDevice] = useState(false);
-  
+
   useEffect(() => {
-    const isLowEnd = 
-      navigator.hardwareConcurrency <= 4 || 
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
+    const isLowEnd =
+      navigator.hardwareConcurrency <= 4 ||
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+
     setIsLowPerfDevice(isLowEnd);
   }, []);
-  
+
   return isLowPerfDevice;
 };
 
@@ -258,156 +256,169 @@ const useObjectifState = () => {
 };
 
 // Components optimisés
-const BackgroundImage = memo(({ side, isVisible }: { side: "left" | "right"; isVisible: boolean }) => {
-  const prefersReducedMotion = useReducedMotion();
-  const isLowPerfDevice = useOptimizedAnimations();
-  
-  return (
-    <div className={`absolute ${side}-0 top-0 h-full w-[25vw] overflow-hidden pointer-events-none`}>
-      {/* Image de fond fixe - ne bouge plus lors des sélections */}
-      <motion.div
-        className="absolute inset-0 opacity-15"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isVisible ? 0.15 : 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+const BackgroundImage = memo(
+  ({ side, isVisible }: { side: "left" | "right"; isVisible: boolean }) => {
+    const prefersReducedMotion = useReducedMotion();
+    const isLowPerfDevice = useOptimizedAnimations();
+
+    return (
+      <div
+        className={`absolute ${side}-0 top-0 h-full w-[25vw] overflow-hidden pointer-events-none`}
       >
-        {/* Effet de blur animé seulement si performance OK */}
-        {!prefersReducedMotion && !isLowPerfDevice && (
-          <motion.div
-            className="absolute inset-0 blur-[100px] opacity-30"
-            animate={{
-              scale: [1, 1.05, 1],
-              opacity: [0.2, 0.3, 0.2],
-            }}
-            transition={{
-              duration: 12,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
+        {/* Image de fond fixe - ne bouge plus lors des sélections */}
+        <motion.div
+          className="absolute inset-0 opacity-15"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isVisible ? 0.15 : 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          {/* Effet de blur animé seulement si performance OK */}
+          {!prefersReducedMotion && !isLowPerfDevice && (
+            <motion.div
+              className="absolute inset-0 blur-[100px] opacity-30"
+              animate={{
+                scale: [1, 1.05, 1],
+                opacity: [0.2, 0.3, 0.2],
+              }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Image
+                src="/img/Objectif/Face2.png"
+                alt={`Gaara ${side} blur`}
+                fill
+                className="object-contain"
+                style={{
+                  filter: "grayscale(100%) brightness(0.05)",
+                  transform:
+                    side === "left" ? "scaleX(-1) scale(0.7)" : "scale(0.7)",
+                  objectPosition: "center 30%",
+                }}
+                priority={false}
+                loading="lazy"
+              />
+            </motion.div>
+          )}
+
+          {/* Image principale fixe */}
+          <div className={styles.backgroundImage.base}>
             <Image
               src="/img/Objectif/Face2.png"
-              alt={`Gaara ${side} blur`}
+              alt={`Gaara ${side}`}
               fill
               className="object-contain"
               style={{
-                filter: "grayscale(100%) brightness(0.05)",
-                transform: side === "left" ? "scaleX(-1) scale(0.7)" : "scale(0.7)",
-                objectPosition: "center 30%"
+                objectPosition: "center 30%",
+                maskImage: styles.backgroundImage.mask[side],
+                WebkitMaskImage: styles.backgroundImage.mask[side],
+                transform:
+                  side === "left" ? "scaleX(-1) scale(0.7)" : "scale(0.7)",
               }}
-              priority={false}
-              loading="lazy"
+              priority={true}
             />
-          </motion.div>
-        )}
-        
-        {/* Image principale fixe */}
-        <div className={styles.backgroundImage.base}>
-          <Image
-            src="/img/Objectif/Face2.png"
-            alt={`Gaara ${side}`}
-            fill
-            className="object-contain"
-            style={{
-              objectPosition: "center 30%",
-              maskImage: styles.backgroundImage.mask[side],
-              WebkitMaskImage: styles.backgroundImage.mask[side],
-              transform: side === "left" ? "scaleX(-1) scale(0.7)" : "scale(0.7)",
-            }}
-            priority={true}
-          />
-          <div
-            className={`absolute inset-0 bg-gradient-to-${
-              side === "left" ? "r" : "l"
-            } from-transparent via-transparent to-transparent opacity-90`}
-          />
-        </div>
-      </motion.div>
-    </div>
-  );
-});
+            <div
+              className={`absolute inset-0 bg-gradient-to-${
+                side === "left" ? "r" : "l"
+              } from-transparent via-transparent to-transparent opacity-90`}
+            />
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
+);
 
 BackgroundImage.displayName = "BackgroundImage";
 
-const ObjectifDescription = memo(({
-  content,
-  isVisible,
-  type,
-}: {
-  content: string;
-  isVisible: boolean;
-  type: "clan" | "personnels";
-}) => {
-  const contentRef = useRef<HTMLDivElement>(null);
-  const prefersReducedMotion = useReducedMotion();
-  const isLowPerfDevice = useOptimizedAnimations();
-  
-  const isContentInView = useInView(contentRef, {
-    threshold: 0.1,
-    once: false,
-    rootMargin: "0px",
-  });
+const ObjectifDescription = memo(
+  ({
+    content,
+    isVisible,
+    type,
+  }: {
+    content: string;
+    isVisible: boolean;
+    type: "clan" | "personnels";
+  }) => {
+    const contentRef = useRef<HTMLDivElement>(null);
+    const prefersReducedMotion = useReducedMotion();
+    const isLowPerfDevice = useOptimizedAnimations();
 
-  const iconSrc = useMemo(() => 
-    type === "clan" ? "/img/Objectif/icon.png" : "/img/Objectif/icon.png",
-    [type]
-  );
+    const isContentInView = useInView(contentRef, {
+      threshold: 0.1,
+      once: false,
+      rootMargin: "0px",
+    });
 
-  return (
-    <motion.div
-      ref={contentRef}
-      variants={animations.content}
-      initial="hidden"
-      animate={isVisible && isContentInView ? "visible" : "hidden"}
-      className="flex flex-col items-center gap-8"
-    >
-      <motion.p 
-        className="text-sand-100 leading-relaxed text-lg w-full"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        {content}
-      </motion.p>
-      
+    const iconSrc = useMemo(
+      () =>
+        type === "clan" ? "/img/Objectif/icon.png" : "/img/Objectif/icon.png",
+      [type]
+    );
+
+    return (
       <motion.div
-        className="flex-shrink-0 w-40 h-40 relative"
-        whileHover={prefersReducedMotion || isLowPerfDevice ? {} : { 
-          scale: 1.1,
-          rotate: 5
-        }}
-        transition={{ duration: 0.3 }}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
+        ref={contentRef}
+        variants={animations.content}
+        initial="hidden"
+        animate={isVisible && isContentInView ? "visible" : "hidden"}
+        className="flex flex-col items-center gap-8"
       >
-        {/* Effet de glow derrière l'icône */}
-        {!prefersReducedMotion && !isLowPerfDevice && (
-          <motion.div
-            className="absolute inset-0 rounded-full bg-rougePerso/20 blur-xl"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.6, 0.3]
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
+        <motion.p
+          className="text-sand-100 leading-relaxed text-lg w-full"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          {content}
+        </motion.p>
+
+        <motion.div
+          className="flex-shrink-0 w-40 h-40 relative"
+          whileHover={
+            prefersReducedMotion || isLowPerfDevice
+              ? {}
+              : {
+                  scale: 1.1,
+                  rotate: 5,
+                }
+          }
+          transition={{ duration: 0.3 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+        >
+          {/* Effet de glow derrière l'icône */}
+          {!prefersReducedMotion && !isLowPerfDevice && (
+            <motion.div
+              className="absolute inset-0 rounded-full bg-rougePerso/20 blur-xl"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.6, 0.3],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          )}
+
+          <Image
+            src={iconSrc}
+            alt="Objectif icon"
+            width={160}
+            height={160}
+            className="object-contain relative z-10 drop-shadow-lg"
+            loading="lazy"
           />
-        )}
-        
-        <Image
-          src={iconSrc}
-          alt="Objectif icon"
-          width={160}
-          height={160}
-          className="object-contain relative z-10 drop-shadow-lg"
-          loading="lazy"
-        />
+        </motion.div>
       </motion.div>
-    </motion.div>
-  );
-});
+    );
+  }
+);
 
 ObjectifDescription.displayName = "ObjectifDescription";
 
@@ -420,160 +431,167 @@ const ObjectifTitle = ({ title }: { title: string }) => (
   </h3>
 );
 
-const ObjectifButton = memo(({
-  title,
-  isSelected,
-  onClick,
-  index,
-}: {
-  title: string;
-  isSelected: boolean;
-  onClick: () => void;
-  index: number;
-}) => {
-  const prefersReducedMotion = useReducedMotion();
-  const isLowPerfDevice = useOptimizedAnimations();
-  
-  const buttonStyle = isSelected ? styles.button.selected : styles.button.default;
-  
-  return (
-    <motion.button
-      onClick={onClick}
-      className={`${styles.button.base} ${buttonStyle.container} ${buttonStyle.glow}`}
-      variants={animations.button}
-      custom={index}
-      whileHover={prefersReducedMotion || isLowPerfDevice ? {} : { 
-        scale: 1.03,
-        y: -2,
-        transition: { duration: 0.3, ease: "easeOut" }
-      }}
-      whileTap={{ scale: 0.97, transition: { duration: 0.1 } }}
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
-    >
-      {/* Effet de morphing pour les boutons non-sélectionnés */}
-      {!isSelected && (
-        <motion.div
-          className={buttonStyle.morphing}
-          initial={{ scaleX: 0 }}
-          whileHover={{ scaleX: 1 }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
-        />
-      )}
-      
-      {/* Overlay lumineux */}
-      <motion.div
-        className={buttonStyle.overlay}
-        initial={{ opacity: 0 }}
-        whileHover={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      />
-      
-      {/* Particules flottantes pour les boutons sélectionnés */}
-      {isSelected && !prefersReducedMotion && !isLowPerfDevice && (
-        <motion.div 
-          className={buttonStyle.particles}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          {[...Array(8)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1.5 h-1.5 bg-red-400 rounded-full shadow-[0_0_4px_rgba(239,68,68,0.8)]"
-              style={{
-                left: `${15 + i * 10}%`,
-                top: `${25 + (i % 3) * 25}%`,
-              }}
-              animate={{
-                y: [-8, -20, -8],
-                opacity: [0.6, 1, 0.6],
-                scale: [0.8, 1.4, 0.8],
-                rotate: [0, 180, 360]
-              }}
-              transition={{
-                duration: 3 + i * 0.4,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.3
-              }}
-            />
-          ))}
-          {/* Particules supplémentaires avec mouvement horizontal */}
-          {[...Array(4)].map((_, i) => (
-            <motion.div
-              key={`horizontal-${i}`}
-              className="absolute w-1 h-1 bg-red-300 rounded-full shadow-[0_0_3px_rgba(252,165,165,0.6)]"
-              style={{
-                left: `${25 + i * 20}%`,
-                top: `${50 + (i % 2) * 20}%`,
-              }}
-              animate={{
-                x: [-3, 3, -3],
-                y: [-5, -12, -5],
-                opacity: [0.4, 0.9, 0.4],
-                scale: [0.6, 1.1, 0.6]
-              }}
-              transition={{
-                duration: 2.5 + i * 0.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.4 + 1
-              }}
-            />
-          ))}
-        </motion.div>
-      )}
-      
-      {/* Effet de scan lumineux */}
-      {!prefersReducedMotion && !isLowPerfDevice && (
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0"
-          whileHover={{
-            opacity: [0, 1, 0],
-            x: ["-100%", "100%"]
-          }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-        />
-      )}
-      
-      {/* Bordure animée pour les boutons sélectionnés */}
-     
-      
-      {/* Texte avec effet de glow */}
-      <motion.span 
-        className={`${buttonStyle.text} relative z-20`}
-        style={{ fontFamily: "Edo" }}
-        whileHover={{
-          textShadow: isSelected 
-            ? "0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.4)"
-            : "0 0 10px rgba(146,0,0,0.8), 0 0 20px rgba(146,0,0,0.4)"
-        }}
-        transition={{ duration: 0.3 }}
+const ObjectifButton = memo(
+  ({
+    title,
+    isSelected,
+    onClick,
+    index,
+  }: {
+    title: string;
+    isSelected: boolean;
+    onClick: () => void;
+    index: number;
+  }) => {
+    const prefersReducedMotion = useReducedMotion();
+    const isLowPerfDevice = useOptimizedAnimations();
+
+    const buttonStyle = isSelected
+      ? styles.button.selected
+      : styles.button.default;
+
+    return (
+      <motion.button
+        onClick={onClick}
+        className={`${styles.button.base} ${buttonStyle.container} ${buttonStyle.glow}`}
+        variants={animations.button}
+        custom={index}
+        whileHover={
+          prefersReducedMotion || isLowPerfDevice
+            ? {}
+            : {
+                scale: 1.03,
+                y: -2,
+                transition: { duration: 0.3, ease: "easeOut" },
+              }
+        }
+        whileTap={{ scale: 0.97, transition: { duration: 0.1 } }}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4, delay: index * 0.1 }}
       >
-        {title}
-      </motion.span>
-      
-      {/* Effet de pulsation de fond pour les boutons sélectionnés */}
-      {isSelected && !prefersReducedMotion && !isLowPerfDevice && (
+        {/* Effet de morphing pour les boutons non-sélectionnés */}
+        {!isSelected && (
+          <motion.div
+            className={buttonStyle.morphing}
+            initial={{ scaleX: 0 }}
+            whileHover={{ scaleX: 1 }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
+          />
+        )}
+
+        {/* Overlay lumineux */}
         <motion.div
-          className="absolute inset-0 bg-rougePerso/20 rounded-xl"
-          animate={{
-            scale: [1, 1.05, 1],
-            opacity: [0.2, 0.4, 0.2]
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+          className={buttonStyle.overlay}
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
         />
-      )}
-    </motion.button>
-  );
-});
+
+        {/* Particules flottantes pour les boutons sélectionnés */}
+        {isSelected && !prefersReducedMotion && !isLowPerfDevice && (
+          <motion.div
+            className={buttonStyle.particles}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1.5 h-1.5 bg-red-400 rounded-full shadow-[0_0_4px_rgba(239,68,68,0.8)]"
+                style={{
+                  left: `${15 + i * 10}%`,
+                  top: `${25 + (i % 3) * 25}%`,
+                }}
+                animate={{
+                  y: [-8, -20, -8],
+                  opacity: [0.6, 1, 0.6],
+                  scale: [0.8, 1.4, 0.8],
+                  rotate: [0, 180, 360],
+                }}
+                transition={{
+                  duration: 3 + i * 0.4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: i * 0.3,
+                }}
+              />
+            ))}
+            {/* Particules supplémentaires avec mouvement horizontal */}
+            {[...Array(4)].map((_, i) => (
+              <motion.div
+                key={`horizontal-${i}`}
+                className="absolute w-1 h-1 bg-red-300 rounded-full shadow-[0_0_3px_rgba(252,165,165,0.6)]"
+                style={{
+                  left: `${25 + i * 20}%`,
+                  top: `${50 + (i % 2) * 20}%`,
+                }}
+                animate={{
+                  x: [-3, 3, -3],
+                  y: [-5, -12, -5],
+                  opacity: [0.4, 0.9, 0.4],
+                  scale: [0.6, 1.1, 0.6],
+                }}
+                transition={{
+                  duration: 2.5 + i * 0.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: i * 0.4 + 1,
+                }}
+              />
+            ))}
+          </motion.div>
+        )}
+
+        {/* Effet de scan lumineux */}
+        {!prefersReducedMotion && !isLowPerfDevice && (
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0"
+            whileHover={{
+              opacity: [0, 1, 0],
+              x: ["-100%", "100%"],
+            }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          />
+        )}
+
+        {/* Bordure animée pour les boutons sélectionnés */}
+
+        {/* Texte avec effet de glow */}
+        <motion.span
+          className={`${buttonStyle.text} relative z-20`}
+          style={{ fontFamily: "Edo" }}
+          whileHover={{
+            textShadow: isSelected
+              ? "0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.4)"
+              : "0 0 10px rgba(146,0,0,0.8), 0 0 20px rgba(146,0,0,0.4)",
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          {title}
+        </motion.span>
+
+        {/* Effet de pulsation de fond pour les boutons sélectionnés */}
+        {isSelected && !prefersReducedMotion && !isLowPerfDevice && (
+          <motion.div
+            className="absolute inset-0 bg-rougePerso/20 rounded-xl"
+            animate={{
+              scale: [1, 1.05, 1],
+              opacity: [0.2, 0.4, 0.2],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        )}
+      </motion.button>
+    );
+  }
+);
 
 ObjectifButton.displayName = "ObjectifButton";
 
@@ -602,7 +620,7 @@ const Objectif = () => {
       >
         {/* Nuages qui "bugguent" dans cette section */}
         <SectionCloud cloudCount={1} />
-        
+
         <motion.div
           className="absolute inset-0 pointer-events-none z-10"
           initial={{ opacity: 0 }}
@@ -640,9 +658,10 @@ const Objectif = () => {
                 whileHover={{
                   scale: 1.05,
                   y: -2,
-                  boxShadow: activeTab === tab 
-                    ? "0 0 40px rgba(146,0,0,0.8), 0 0 80px rgba(146,0,0,0.4)"
-                    : "0 8px 30px rgba(146,0,0,0.4), 0 0 20px rgba(146,0,0,0.2)"
+                  boxShadow:
+                    activeTab === tab
+                      ? "0 0 40px rgba(146,0,0,0.8), 0 0 80px rgba(146,0,0,0.4)"
+                      : "0 8px 30px rgba(146,0,0,0.4), 0 0 20px rgba(146,0,0,0.2)",
                 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -655,17 +674,16 @@ const Objectif = () => {
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0"
                   whileHover={{
                     opacity: [0, 1, 0],
-                    x: ["-100%", "100%"]
+                    x: ["-100%", "100%"],
                   }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
                 />
-                
+
                 {/* Bordure animée pour le tab actif */}
-           
-                
+
                 {/* Particules pour le tab actif */}
                 {activeTab === tab && (
-                  <motion.div 
+                  <motion.div
                     className="absolute inset-0"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -684,13 +702,13 @@ const Objectif = () => {
                           y: [-5, -12, -5],
                           opacity: [0.6, 1, 0.6],
                           scale: [0.8, 1.3, 0.8],
-                          rotate: [0, 180, 360]
+                          rotate: [0, 180, 360],
                         }}
                         transition={{
                           duration: 2.5 + i * 0.3,
                           repeat: Infinity,
                           ease: "easeInOut",
-                          delay: i * 0.4
+                          delay: i * 0.4,
                         }}
                       />
                     ))}
@@ -707,26 +725,27 @@ const Objectif = () => {
                           x: [0, 8, 0, -8, 0],
                           y: [-4, -10, -4],
                           opacity: [0.5, 0.9, 0.5],
-                          scale: [0.6, 1.1, 0.6]
+                          scale: [0.6, 1.1, 0.6],
                         }}
                         transition={{
                           duration: 3 + i * 0.5,
                           repeat: Infinity,
                           ease: "easeInOut",
-                          delay: i * 0.5 + 0.8
+                          delay: i * 0.5 + 0.8,
                         }}
                       />
                     ))}
                   </motion.div>
                 )}
-                
+
                 {/* Texte avec glow */}
                 <motion.span
                   className="relative z-10"
                   whileHover={{
-                    textShadow: activeTab === tab
-                      ? "0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.4)"
-                      : "0 0 10px rgba(146,0,0,0.8), 0 0 20px rgba(146,0,0,0.4)"
+                    textShadow:
+                      activeTab === tab
+                        ? "0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.4)"
+                        : "0 0 10px rgba(146,0,0,0.8), 0 0 20px rgba(146,0,0,0.4)",
                   }}
                 >
                   Objectifs {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -768,15 +787,11 @@ const Objectif = () => {
                     transition={{
                       duration: 0.4,
                       ease: "easeOut",
-                      scale: { duration: 0.3 }
+                      scale: { duration: 0.3 },
                     }}
                     className="relative bg-black/100 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 transition-all duration-300 overflow-hidden group"
                     whileHover={{ y: -2 }}
                   >
-
-                    
-
-                    
                     {/* Contenu */}
                     <div className="relative z-10">
                       <ObjectifTitle title={selectedObjectif.title} />
@@ -786,11 +801,9 @@ const Objectif = () => {
                         type={activeTab}
                       />
                     </div>
-                    
+
                     {/* Effet de glow au hover */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-rougePerso/10 via-transparent to-black/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    />
+                    <motion.div className="absolute inset-0 bg-gradient-to-br from-rougePerso/10 via-transparent to-black/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </motion.div>
                 )}
               </AnimatePresence>
