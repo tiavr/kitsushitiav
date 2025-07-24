@@ -121,9 +121,9 @@ const Quisuije = () => {
           >
             <button
               onClick={() => handleIndexChange("prev")}
-              className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg bg-gray-900/70 hover:bg-gray-800/90 backdrop-blur-sm
-                        transition-all duration-300 shadow-lg 
-                        flex items-center gap-2 group w-full sm:w-auto justify-center"
+              className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg bg-black/40 hover:bg-black/60 backdrop-blur-sm
+                       transition-all duration-300 shadow-lg border border-rougePerso/15
+                       flex items-center gap-2 group w-full sm:w-auto justify-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +139,7 @@ const Quisuije = () => {
                   d="M15.75 19.5L8.25 12l7.5-7.5"
                 />
               </svg>
-              <span className="text-rougePerso group-hover:text-white transition-colors font-medium text-sm sm:text-base">
+              <span className="text-rougePerso  group-hover:text-white transition-colors font-medium text-sm sm:text-base">
                 Précédent
               </span>
             </button>
@@ -161,7 +161,7 @@ const Quisuije = () => {
             <button
               onClick={() => handleIndexChange("next")}
               className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg bg-black/40 hover:bg-black/60 backdrop-blur-sm
-                       transition-all duration-300 shadow-lg border border-rougePerso/10
+                       transition-all duration-300 shadow-lg border border-rougePerso/15
                        flex items-center gap-2 group w-full sm:w-auto justify-center"
             >
               <span className="text-rougePerso group-hover:text-white transition-colors font-medium text-sm sm:text-base">

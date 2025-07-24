@@ -159,9 +159,7 @@ section[id] {
   margin-right: 0.5rem;
 }
 
-button:focus {
-  outline: 2px solid #ffd700;
-}
+
 
 .blur-lg {
   --tw-blur: blur(16px);
