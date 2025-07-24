@@ -102,7 +102,7 @@ const Quisuije = () => {
         <div className="max-w-6xl mx-auto relative">
           <motion.div
             variants={imageVariants}
-            className="relative aspect-video rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-lg border border-amber-400/20"
+            className="relative aspect-video rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-lg "
           >
             <Image
               src={images[currentIndex].src}
@@ -122,7 +122,7 @@ const Quisuije = () => {
             <button
               onClick={() => handleIndexChange("prev")}
               className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg bg-gray-900/70 hover:bg-gray-800/90 backdrop-blur-sm
-                        transition-all duration-300 shadow-lg border border-amber-400/30
+                        transition-all duration-300 shadow-lg 
                         flex items-center gap-2 group w-full sm:w-auto justify-center"
             >
               <svg
@@ -131,7 +131,7 @@ const Quisuije = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={2.5}
                 stroke="currentColor"
-                className="w-4 h-4 sm:w-5 sm:h-5 text-sand-200 group-hover:text-white transition-colors"
+                className="w-4 h-4 sm:w-5 sm:h-5 text-rougePerso group-hover:text-white transition-colors"
               >
                 <path
                   strokeLinecap="round"
@@ -139,7 +139,7 @@ const Quisuije = () => {
                   d="M15.75 19.5L8.25 12l7.5-7.5"
                 />
               </svg>
-              <span className="text-sand-200 group-hover:text-white transition-colors font-medium text-sm sm:text-base">
+              <span className="text-rougePerso group-hover:text-white transition-colors font-medium text-sm sm:text-base">
                 Précédent
               </span>
             </button>
@@ -151,8 +151,8 @@ const Quisuije = () => {
                   onClick={() => setCurrentIndex(index)}
                   className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all ${
                     index === currentIndex
-                      ? "bg-amber-400 scale-125"
-                      : "bg-amber-400/30 hover:bg-amber-400/50"
+                      ? "bg-rougePerso scale-125"
+                      : "bg-rougePerso/30 hover:bg-rougePerso/50"
                   }`}
                 />
               ))}
@@ -161,10 +161,10 @@ const Quisuije = () => {
             <button
               onClick={() => handleIndexChange("next")}
               className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg bg-black/40 hover:bg-black/60 backdrop-blur-sm
-                       transition-all duration-300 shadow-lg border border-sand-200/10
+                       transition-all duration-300 shadow-lg border border-rougePerso/10
                        flex items-center gap-2 group w-full sm:w-auto justify-center"
             >
-              <span className="text-sand-200 group-hover:text-white transition-colors font-medium text-sm sm:text-base">
+              <span className="text-rougePerso group-hover:text-white transition-colors font-medium text-sm sm:text-base">
                 Suivant
               </span>
               <svg
@@ -173,7 +173,7 @@ const Quisuije = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={2.5}
                 stroke="currentColor"
-                className="w-4 h-4 sm:w-5 sm:h-5 text-sand-200 group-hover:text-white transition-colors"
+                className="w-4 h-4 sm:w-5 sm:h-5 text-rougePerso group-hover:text-white transition-colors"
               >
                 <path
                   strokeLinecap="round"

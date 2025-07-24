@@ -551,12 +551,17 @@ const Caracteristique = () => {
   />
 </div>
 
-        {/* Image d'Akemaru avec effet de transparence */}
+        {/* Image d'Akemaru positionnée sur le côté droit et dépassant de la card Apparence */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isSectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-          className="flex justify-center mb-8 sm:mb-10 md:mb-12"
+          className="absolute pointer-events-none"
+          style={{
+            right: 'calc(50% - -150px)',
+            top: '15px',
+            zIndex: 1
+          }}
         >
           <div className="relative">
             <Image
@@ -582,9 +587,11 @@ const Caracteristique = () => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto relative z-10">
           {characteristics.map((characteristic, index) => (
-            <CharacteristicCard key={index} {...characteristic} index={index} />
+            <div key={index} className={`relative ${index === 0 ? 'z-10' : 'z-5'}`} style={{ zIndex: index === 0 ? 5 : 2 }}>
+              <CharacteristicCard {...characteristic} index={index} />
+            </div>
           ))}
         </div>
       </motion.div>
