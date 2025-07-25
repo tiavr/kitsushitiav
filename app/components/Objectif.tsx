@@ -67,7 +67,7 @@ const objectifsPersonnels: ObjectifData[] = [
   {
     title: "Protecteur de la forêt",
     content:
-      "Okami est bien décidé a rendre à la Mère nature se qu’elle lui a donné. De ce fait, Okami veut à tout prix préserver la Forêt, lui donnant droit et respect. Pour cela, Okami compte porter la voix des animaux et de la forêt au sein du Commandement de Konoha pour faire entendre ses besoins.",
+      "Okami est bien décidé a rendre à la Mère nature se qu’elle lui a donné. De ce fait, Okami veut à tout prix préserver la Forêt, lui donnant droit et respect. Pour cela, Okami compte porter la voix de la forêt au sein du Commandement de Konoha, le but étant de contrôler et superviser tout ce qui se trame dans la forêt (excursion, chasse etc) en veillant à ce que la forêt soit préservée.",
   },
 ];
 
