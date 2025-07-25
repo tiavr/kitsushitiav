@@ -554,13 +554,13 @@ const Caracteristique = () => {
             isSectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
           }
           transition={{ duration: 0.6 }}
-          className="text-5xl text-rougePerso font-bold text-center mb-12"
+          className="text-5xl text-rougePerso font-bold text-center mb-12 relative z-20"
         >
           Caractéristiques
         </motion.h2>
 
         {/* Séparateur animé */}
-        <div className="flex items-center justify-center mb-16">
+        <div className="flex items-center justify-center mb-16 relative z-20">
           <motion.div
             initial={{ scaleX: 0 }}
             animate={isSectionInView ? { scaleX: 1 } : { scaleX: 0 }}
@@ -604,12 +604,12 @@ const Caracteristique = () => {
             isSectionInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }
           }
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="absolute right-[calc(50%-150px)] top-4 z-[5] pointer-events-none hidden lg:block"
+          className="absolute right-[calc(55%-50px)] top-3 z-[1] pointer-events-none hidden lg:block"
         >
           <Image
             src="/img/caractéristiques/akemaru.png"
             alt="Akemaru"
-            width={300}
+            width={400}
             height={400}
             className="object-contain opacity-90"
             style={{
