@@ -21,9 +21,9 @@ const objectifsClan: ObjectifData[] = [
       "Okami cherchera à mettre en place un rituel au sein du clan : La chasse en meute. Le but principal de ce rituel est d'aiguiser leurs talents de chasseur mais également de renforcer la cohésion au sein de la meute. Chaque année, les membres du clan Inuzuka devront se rassembler afin de partir en chasse, les proies peuvent être du gibier mais également des ninjas, ce rituel peut également s'instaurer dans le cadre d'un mercenariat.",
   },
   {
-    title: "Apprendre les moeurs et tradition du clan",
+    title: "Un clan de chasseurs/d'éclaireurs",
     content:
-      "Okami suivra l'éducation de ses ainés afin d'apprendre toutes les traditions et héritages du clan. Le but étant de faire perpétuer ces valeurs aux prochaines générations du clan.",
+      "Okami aspire à élever le prestige du clan Inuzuka dans les domaines de la traque et de la chasse. Il souhaite que le clan Inuzuka se fasse une réputation dans ce domaine, dans l'entièreté du monde ninja. Il souhaite que le clan mette en avant leur flair incroyable et leur instinct bestial en prenant part aux opérations secrètes du village.",
   },
   {
     title: "Rallier un clan mineur ou une famille au service du clan",
@@ -45,14 +45,14 @@ const objectifsClan: ObjectifData[] = [
 
 const objectifsPersonnels: ObjectifData[] = [
   {
-    title: "Evenement de traque",
+    title: "Evenement de traque/Stage de survie",
     content:
-      "Okami mettra en place un évenement au sein du village de Konoha consistant à rassembler quelques membre du clan Inuzuka ainsi que tous les ninjas de Konoha afin de participer à un jeu de chasse à l'homme. Les Inuzuka devront utiliser leur flair et leur talent d'éclaireur et de chasseur afin de traquet les différents ninjas de Konoha dans une zone précise. Les survivants seront récompensés. Cela mettra à l'épreuve les capacités de survie des ninjas de Konoha, et entrainera le flair des Inuzuka.",
+      "Okami mettra en place des stages de survie, afin d'enseigner la survie en milieu hostile. Ces stages découleront sur un évenement au sein du village de Konoha consistant à rassembler quelques membre du clan Inuzuka ainsi que tous les ninjas de Konoha afin de participer à un jeu de chasse à l'homme. Les Inuzuka devront utiliser leur flair et leur talent d'éclaireur et de chasseur afin de traquer les différents ninjas de Konoha dans une zone précise. Les survivants seront récompensés. Cela mettra à l'épreuve les capacités de survie des ninjas de Konoha, et entrainera le flair des Inuzuka.",
   },
   {
     title: "Renforcer son lien avec son compagnon canin",
     content:
-      "Okami souhaite réellement entretenir un lien fort avec son chien. Il souhaite que sa relation avec lui ne soit pas uniquément lié à ce statut de maitre/chien, il voit ça plutôt comme une amitié, une fraternité. Il a besoin d'un second pouvant l'épauler et le soutenir dans sa vie de ninja projets.",
+      "Okami souhaite réellement entretenir un lien fort avec son chien. Il souhaite que sa relation avec lui ne soit pas uniquément lié à ce statut de maitre/chien, il voit ça plutôt comme une amitié, une fraternité. Il a besoin d'un second pouvant l'épauler et le soutenir dans sa vie de ninja.",
   },
   {
     title: "Rejoindre la Stratégie militaire",
@@ -67,7 +67,7 @@ const objectifsPersonnels: ObjectifData[] = [
   {
     title: "Protecteur de la forêt",
     content:
-      "Okami est bien décidé a rendre à la Mère nature se qu’elle lui a donné. De ce fait, Okami veut à tout prix préserver la Forêt, lui donnant droit et respect. Pour cela, Satoshi compte porter la voix des animaux et de la forêt au sein du Commandement de Konoha pour faire entendre ses besoins.",
+      "Okami est bien décidé a rendre à la Mère nature se qu’elle lui a donné. De ce fait, Okami veut à tout prix préserver la Forêt, lui donnant droit et respect. Pour cela, Okami compte porter la voix des animaux et de la forêt au sein du Commandement de Konoha pour faire entendre ses besoins.",
   },
 ];
 
