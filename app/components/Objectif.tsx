@@ -21,7 +21,7 @@ const objectifsClan: ObjectifData[] = [
       "Okami cherchera à mettre en place un rituel au sein du clan : La chasse en meute. Le but principal de ce rituel est d'aiguiser leurs talents de chasseur mais également de renforcer la cohésion au sein de la meute. Chaque année, les membres du clan Inuzuka devront se rassembler afin de partir en chasse, les proies peuvent être du gibier mais également des ninjas, ce rituel peut également s'instaurer dans le cadre d'un mercenariat.",
   },
   {
-    title: "Un clan de chasseurs/d'éclaireurs",
+    title: "Un clan de chasseurs et d'éclaireurs",
     content:
       "Okami aspire à élever le prestige du clan Inuzuka dans les domaines de la traque et de la chasse. Il souhaite que le clan Inuzuka se fasse une réputation dans ce domaine, dans l'entièreté du monde ninja. Il souhaite que le clan mette en avant leur flair incroyable et leur instinct bestial en prenant part aux opérations secrètes du village.",
   },
