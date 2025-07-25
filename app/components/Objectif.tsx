@@ -45,7 +45,7 @@ const objectifsClan: ObjectifData[] = [
 
 const objectifsPersonnels: ObjectifData[] = [
   {
-    title: "Evenement de traque/Stage de survie",
+    title: "Evenement de traque et Stage de survie",
     content:
       "Okami mettra en place des stages de survie, afin d'enseigner la survie en milieu hostile. Ces stages découleront sur un évenement au sein du village de Konoha consistant à rassembler quelques membre du clan Inuzuka ainsi que tous les ninjas de Konoha afin de participer à un jeu de chasse à l'homme. Les Inuzuka devront utiliser leur flair et leur talent d'éclaireur et de chasseur afin de traquer les différents ninjas de Konoha dans une zone précise. Les survivants seront récompensés. Cela mettra à l'épreuve les capacités de survie des ninjas de Konoha, et entrainera le flair des Inuzuka.",
   },
