@@ -1,6 +1,6 @@
-import { ReactNode, forwardRef, useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from '../hooks/useInView';
+import { ReactNode, forwardRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "../hooks/useInView";
 
 interface SectionProps {
   children: ReactNode;
@@ -10,8 +10,8 @@ interface SectionProps {
 }
 
 export const Section = forwardRef<HTMLElement, SectionProps>(
-  ({ children, className = '', id, delay = 0 }, ref) => {
-    const [isMounted, setIsMounted] = useState(false);
+  ({ children, className = "", id, delay = 0 }, ref) => {
+    const [, setIsMounted] = useState(false);
     const isInView = useInView(ref as React.RefObject<HTMLElement>, {
       threshold: 0.1,
       once: true,
@@ -23,9 +23,9 @@ export const Section = forwardRef<HTMLElement, SectionProps>(
 
     // Variants pour le contenu uniquement, pas pour le fond
     const contentVariants = {
-      hidden: { 
-        opacity: 0, 
-        y: 20 
+      hidden: {
+        opacity: 0,
+        y: 20,
       },
       visible: {
         opacity: 1,
@@ -41,15 +41,11 @@ export const Section = forwardRef<HTMLElement, SectionProps>(
 
     // Pas d'animation pour la section elle-même (fond)
     return (
-      <section
-        ref={ref}
-        id={id}
-        className={`scroll-mt-20 ${className}`}
-      >
+      <section ref={ref} id={id} className={`scroll-mt-20 ${className}`}>
         <motion.div
           className="w-full h-full"
           initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+          animate={isInView ? "visible" : "hidden"}
           variants={contentVariants}
         >
           {children}
@@ -59,4 +55,4 @@ export const Section = forwardRef<HTMLElement, SectionProps>(
   }
 );
 
-Section.displayName = 'Section';
+Section.displayName = "Section";
