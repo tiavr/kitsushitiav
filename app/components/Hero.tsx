@@ -126,17 +126,6 @@ export default function Hero() {
     },
   };
 
-  const backgroundVariants = {
-    hidden: { scale: 1.05 },
-    visible: {
-      scale: 1,
-      transition: {
-        duration: 1.5,
-        ease: "easeOut",
-      },
-    },
-  };
-
   const titleVariants = {
     hidden: { y: 30, opacity: 0 },
     visible: {
@@ -208,7 +197,10 @@ export default function Hero() {
       aria-label="Section d'accueil avec animation Naruto"
     >
       {/* Background Color - Sans animation pour éviter le flash noir */}
-      <div className="absolute inset-0 bg-[#C5C4C4]" style={{ transform: `translateY(${parallaxY.get()}px)` }}></div>
+      <div
+        className="absolute inset-0 bg-[#C5C4C4]"
+        style={{ transform: `translateY(${parallaxY.get()}px)` }}
+      ></div>
 
       {/* GIF centré au-dessus du titre */}
       <motion.div
