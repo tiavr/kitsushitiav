@@ -143,19 +143,19 @@ const CaractereModal = ({ onClose }: { onClose: () => void }) => {
     {
       titre: "Loyal",
       description:
-        "Okami vouera une loyauté sans faille au village et à son clan. Il agira toujours dans l'intérêt de ces derniers.",
+        "Raiga vouera une loyauté sans faille au village et à son clan. Il agira toujours dans l'intérêt de ces derniers.",
       gif: "/img/caractéristiques/loyal_gif.gif",
     },
     {
       titre: "Calculateur et Manipulateur",
       description:
-        "L'aspect calculateur permet à Okami de tirer avantage de certaines situations, chacune de ses décisions serviront à un but précis. Il n'hésitera pas à manipuler les gens pour son propre intérêt ou pour celui du clan et du village. Il ne fait rien sans arrière-pensées.",
+        "L'aspect calculateur permet à Raiga de tirer avantage de certaines situations, chacune de ses décisions serviront à un but précis. Il n'hésitera pas à manipuler les gens pour son propre intérêt ou pour celui du clan et du village. Il ne fait rien sans arrière-pensées.",
       gif: "/img/caractéristiques/calculateur_gif.gif",
     },
     {
       titre: "Sociable ",
       description:
-        "Okami se montrera sociable et extraverti. Cela lui permet de facilement tisser des liens... tout en masquant ses intentions. Il s'agit principalement d'une façade, afin de facilement gagner la confiance des autres. Sa vraie nature est plutôt calme, posée.",
+        "Raiga se montrera sociable et extraverti. Cela lui permet de facilement tisser des liens... tout en masquant ses intentions. Il s'agit principalement d'une façade, afin de facilement gagner la confiance des autres. Sa vraie nature est plutôt calme, posée.",
       gif: "/img/caractéristiques/sociable_gif.gif",
     },
   ];
@@ -164,7 +164,7 @@ const CaractereModal = ({ onClose }: { onClose: () => void }) => {
     {
       titre: "Kleptomane",
       description:
-        "En grandissant en meute, Okami a pris la mauvaise habitude de voler ses camarades. Il ressent constamment le besoin de voler. A l'époque il volait principalement la nourriture, pour assouvir sa famine, mais en grandissant il a apprit à voler toute sorte de chose, pour avoir une forme de pression, un contrôle sur les autres. Cela lui donne le sentiment d'avoir le dessus sur les gens.",
+        "En grandissant en meute, Raiga a pris la mauvaise habitude de voler ses camarades. Il ressent constamment le besoin de voler. A l'époque il volait principalement la nourriture, pour assouvir sa famine, mais en grandissant il a apprit à voler toute sorte de chose, pour avoir une forme de pression, un contrôle sur les autres. Cela lui donne le sentiment d'avoir le dessus sur les gens.",
       gif: "/img/caractéristiques/kleptomane.gif",
     },
   ];

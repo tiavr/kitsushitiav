@@ -141,7 +141,7 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              Découvrez l&apos;histoire de Okami Inuzuka, ninja de Konoha
+              Découvrez l&apos;histoire de Raiga Inuzuka, ninja de Konoha
             </motion.p>
           </motion.div>
 
@@ -172,7 +172,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="text-sand-400 text-xs sm:text-sm"
           >
-            © {currentYear} Okami Inuzuka
+            © {currentYear} Raiga Inuzuka
           </motion.div>
         </div>
 

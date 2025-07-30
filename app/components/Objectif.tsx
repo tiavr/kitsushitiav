@@ -18,28 +18,28 @@ const objectifsClan: ObjectifData[] = [
   {
     title: "Mettre en place un rituel au sein du clan",
     content:
-      "Okami cherchera à mettre en place un rituel au sein du clan : La chasse en meute. Le but principal de ce rituel est d'aiguiser leurs talents de chasseur mais également de renforcer la cohésion au sein de la meute. Chaque année, les membres du clan Inuzuka devront se rassembler afin de partir en chasse, les proies peuvent être du gibier mais également des ninjas, ce rituel peut également s'instaurer dans le cadre d'un mercenariat.",
+      "Raiga cherchera à mettre en place un rituel au sein du clan : La chasse en meute. Le but principal de ce rituel est d'aiguiser leurs talents de chasseur mais également de renforcer la cohésion au sein de la meute. Chaque année, les membres du clan Inuzuka devront se rassembler afin de partir en chasse, les proies peuvent être du gibier mais également des ninjas, ce rituel peut également s'instaurer dans le cadre d'un mercenariat.",
   },
   {
     title: "Un clan de chasseurs et d'éclaireurs",
     content:
-      "Okami aspire à élever le prestige du clan Inuzuka dans les domaines de la traque et de la chasse. Il souhaite que le clan Inuzuka se fasse une réputation dans ce domaine, dans l'entièreté du monde ninja. Il souhaite que le clan mette en avant leur flair incroyable et leur instinct bestial en prenant part aux opérations secrètes du village.",
+      "Raiga aspire à élever le prestige du clan Inuzuka dans les domaines de la traque et de la chasse. Il souhaite que le clan Inuzuka se fasse une réputation dans ce domaine, dans l'entièreté du monde ninja. Il souhaite que le clan mette en avant leur flair incroyable et leur instinct bestial en prenant part aux opérations secrètes du village.",
   },
   {
     title: "Rallier un clan mineur ou une famille au service du clan",
     content:
-      "Okami est conscient de l’importance de la politique au sein du village. Pour affirmer sa position, il sait qu’il lui faut des alliés loyaux. Il cherchera donc à rallier un clan mineur partageant des intérêts communs. L’objectif sera de placer progressivement les membres de ce clan à des postes plus ou moins influents dans le village, afin de garder un certain contrôle et d’orienter l’opinion publique en sa faveur.",
+      "Raiga est conscient de l’importance de la politique au sein du village. Pour affirmer sa position, il sait qu’il lui faut des alliés loyaux. Il cherchera donc à rallier un clan mineur partageant des intérêts communs. L’objectif sera de placer progressivement les membres de ce clan à des postes plus ou moins influents dans le village, afin de garder un certain contrôle et d’orienter l’opinion publique en sa faveur.",
   },
 
   {
     title: "Relations entre les clans",
     content:
-      "Okami fera en sorte d'étudier les relations entre les clans suite au sein de Konoha. Le but final est d'unifier les clans du village et de garantir une cohésion entre ceux-ci. Cela se fera en étudiant les liens entre les différents clans car ils sont les piliers du village. En organisant des réunions, en débattant, en exposant nos points de vue. Pour Okami, un village se doit d'être uni s'il veut être fort.",
+      "Raiga fera en sorte d'étudier les relations entre les clans suite au sein de Konoha. Le but final est d'unifier les clans du village et de garantir une cohésion entre ceux-ci. Cela se fera en étudiant les liens entre les différents clans car ils sont les piliers du village. En organisant des réunions, en débattant, en exposant nos points de vue. Pour Raiga, un village se doit d'être uni s'il veut être fort.",
   },
   {
     title: "Affirmer sa position",
     content:
-      "Suite à la mise en surface du clan au sein de Konoha, Okami à pour but de rendre le clan attrayant et indispensable au sein du village. Il souhaite faire prospérer le clan et protéger les intérets de ce dernier. Il souhaite affirmer la position du clan et le placer comme étant un pilier non seulement militaire mais également politique. Il motivera les membres du clan à l'accompagner dans cette quête d'occuper des postes à fortes responsabilités.",
+      "Suite à la mise en surface du clan au sein de Konoha, Raiga à pour but de rendre le clan attrayant et indispensable au sein du village. Il souhaite faire prospérer le clan et protéger les intérets de ce dernier. Il souhaite affirmer la position du clan et le placer comme étant un pilier non seulement militaire mais également politique. Il motivera les membres du clan à l'accompagner dans cette quête d'occuper des postes à fortes responsabilités.",
   },
 ];
 
@@ -47,27 +47,27 @@ const objectifsPersonnels: ObjectifData[] = [
   {
     title: "Evenement de traque et Stage de survie",
     content:
-      "Okami mettra en place des stages de survie, afin d'enseigner la survie en milieu hostile. Ces stages découleront sur un évenement au sein du village de Konoha consistant à rassembler quelques membre du clan Inuzuka ainsi que tous les ninjas de Konoha afin de participer à un jeu de chasse à l'homme. Les Inuzuka devront utiliser leur flair et leur talent d'éclaireur et de chasseur afin de traquer les différents ninjas de Konoha dans une zone précise. Les survivants seront récompensés. Cela mettra à l'épreuve les capacités de survie des ninjas de Konoha, et entrainera le flair des Inuzuka.",
+      "Raiga mettra en place des stages de survie, afin d'enseigner la survie en milieu hostile. Ces stages découleront sur un évenement au sein du village de Konoha consistant à rassembler quelques membre du clan Inuzuka ainsi que tous les ninjas de Konoha afin de participer à un jeu de chasse à l'homme. Les Inuzuka devront utiliser leur flair et leur talent d'éclaireur et de chasseur afin de traquer les différents ninjas de Konoha dans une zone précise. Les survivants seront récompensés. Cela mettra à l'épreuve les capacités de survie des ninjas de Konoha, et entrainera le flair des Inuzuka.",
   },
   {
     title: "Renforcer son lien avec son compagnon canin",
     content:
-      "Okami souhaite réellement entretenir un lien fort avec son chien. Il souhaite que sa relation avec lui ne soit pas uniquément lié à ce statut de maitre/chien, il voit ça plutôt comme une amitié, une fraternité. Il a besoin d'un second pouvant l'épauler et le soutenir dans sa vie de ninja.",
+      "Raiga souhaite réellement entretenir un lien fort avec son chien. Il souhaite que sa relation avec lui ne soit pas uniquément lié à ce statut de maitre/chien, il voit ça plutôt comme une amitié, une fraternité. Il a besoin d'un second pouvant l'épauler et le soutenir dans sa vie de ninja.",
   },
   {
     title: "Rejoindre la Stratégie militaire",
     content:
-      "Okami fera en sorte de rejoindre la stratégie militaire le plus rapidement possible. Cela lui permet d'être au coeur de nombreux évenements militaire au sein du village ce qui lui permettra de mettre en avant son art oratoire et ses capacités à diriger les ninjas sur le terrain, comme s'il dirigeait une meute. Le but secondaire est de prendre la tête de cette section et montrer que les Inuzuka peuvent hériter de grandes responsabilités.",
+      "Raiga fera en sorte de rejoindre la stratégie militaire le plus rapidement possible. Cela lui permet d'être au coeur de nombreux évenements militaire au sein du village ce qui lui permettra de mettre en avant son art oratoire et ses capacités à diriger les ninjas sur le terrain, comme s'il dirigeait une meute. Le but secondaire est de prendre la tête de cette section et montrer que les Inuzuka peuvent hériter de grandes responsabilités.",
   },
   {
     title: "Devenir une figure de KONOHAGAKURE",
     content:
-      "Pour devenir un figure de Konoha, Okami sait qu'il doit réaliser des exploits qui vont au-delà des frontières de son clan. En prenant part à des missions importantes pour le village, il démontre sa valeur en tant que combattant, stratège et diplomate. Okami collaborera avec d'autres clans et créera des ponts et des alliances. Des événements culturels, tel qu'une démonstration de capacités par son clan (également les autres clans) sous forme d'art, démontrant que sa richesse culturelle est également présente. Sa sérénité, sa sagesse et sa persévérance rendront les ninjas admiratifs de sa personne, renforçant sa position de personnage emblématique de Konoha.",
+      "Pour devenir un figure de Konoha, Raiga sait qu'il doit réaliser des exploits qui vont au-delà des frontières de son clan. En prenant part à des missions importantes pour le village, il démontre sa valeur en tant que combattant, stratège et diplomate. Raiga collaborera avec d'autres clans et créera des ponts et des alliances. Des événements culturels, tel qu'une démonstration de capacités par son clan (également les autres clans) sous forme d'art, démontrant que sa richesse culturelle est également présente. Sa sérénité, sa sagesse et sa persévérance rendront les ninjas admiratifs de sa personne, renforçant sa position de personnage emblématique de Konoha.",
   },
   {
     title: "Protecteur de la forêt",
     content:
-      "Okami est bien décidé a rendre à la Mère nature se qu’elle lui a donné. De ce fait, Okami veut à tout prix préserver la Forêt, lui donnant droit et respect. Pour cela, Okami compte porter la voix de la forêt au sein du Commandement de Konoha, le but étant de contrôler et superviser tout ce qui se trame dans la forêt (excursion, chasse etc) en veillant à ce que la forêt soit préservée.",
+      "Raiga est bien décidé a rendre à la Mère nature se qu’elle lui a donné. De ce fait, Raiga veut à tout prix préserver la Forêt, lui donnant droit et respect. Pour cela, Raiga compte porter la voix de la forêt au sein du Commandement de Konoha, le but étant de contrôler et superviser tout ce qui se trame dans la forêt (excursion, chasse etc) en veillant à ce que la forêt soit préservée.",
   },
 ];
 
