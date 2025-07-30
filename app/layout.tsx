@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr-FR">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AnimatePresence mode="wait">{children}</AnimatePresence>
         <AudioPlayer />
