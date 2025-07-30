@@ -207,12 +207,8 @@ export default function Hero() {
       style={{ opacity }}
       aria-label="Section d'accueil avec animation Naruto"
     >
-      {/* Background Color */}
-      <motion.div
-        variants={backgroundVariants}
-        style={{ y: parallaxY }}
-        className="absolute inset-0 bg-[#C5C4C4]"
-      ></motion.div>
+      {/* Background Color - Sans animation pour éviter le flash noir */}
+      <div className="absolute inset-0 bg-[#C5C4C4]" style={{ transform: `translateY(${parallaxY.get()}px)` }}></div>
 
       {/* GIF centré au-dessus du titre */}
       <motion.div
